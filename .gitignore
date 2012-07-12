@@ -16,6 +16,8 @@
 /log/*.log
 /tmp
 
+/config/database.yml
+/config/secret_token.rb
 
 *.gem
 *.rbc
@@ -30,8 +32,7 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
-/config/database.yml
-/config/secret_token.rb
+
 
 # YARD artifacts
 .yardoc
