@@ -7,7 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+ <header></header>
+ <nav>
+   <ul>
+     <li><%= link_to 'Portfolio', portfolios_path %> </li>
+     <li><%= link_to 'Bio {About}', about_path %> </li>
+     <li><%= link_to 'Contact', contact_path %> </li>
+     <li><%= link_to 'Blog', 'http://split-spin.blogspot.com' %> </li>
+   </ul>
+ </nav>
 <%= yield %>
 
 </body>
