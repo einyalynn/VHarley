@@ -30,8 +30,8 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
-config/database.yml
-config/secret_token.rb
+/config/database.yml
+/config/secret_token.rb
 
 # YARD artifacts
 .yardoc
