@@ -16,8 +16,7 @@
 /log/*.log
 /tmp
 
-/config/database.yml
-/config/secret_token.rb
+/*.env
 
 *.gem
 *.rbc
