@@ -4,11 +4,18 @@ gem 'rails', '3.2.3'
 
 gem 'bootstrap-sass', '~> 2.0.4.0'
 gem 'pg'
-gem "waz-storage", "~> 1.1.3"
+# sdk for using Azure as asset storage
+gem 'waz-storage', '~> 1.1.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-
+group :development, :test do
+  gem 'rspec-rails'
+end
+group :test do
+  gem 'capybara'
+  # System-dependent gems
+end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
