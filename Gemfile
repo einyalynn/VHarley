@@ -11,6 +11,8 @@ gem 'waz-storage', '~> 1.1.3'
 
 group :development, :test do
   gem 'rspec-rails'
+  # To use debugger
+  #gem 'ruby-debug19', :require => 'ruby-debug'
 end
 group :test do
   gem 'capybara'
@@ -41,5 +43,3 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-#gem 'ruby-debug19', :require => 'ruby-debug'
