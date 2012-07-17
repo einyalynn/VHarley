@@ -4,6 +4,13 @@ match 'about' => 'about#index', :as => :about
 match 'contact' => 'about#contact', :as => :contact
 match 'biography' => 'about#index'
 match 'bio' => 'about#index'
+match 'admin' => 'admin#index'
+
+   namespace :admin do
+     # Directs /admin/products/* to Admin::ProductsController
+     # (app/controllers/admin/products_controller.rb)
+     resources :photos
+   end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
