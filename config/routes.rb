@@ -1,16 +1,16 @@
 Victoria::Application.routes.draw do
-resources :portfolio, :controller => :portfolios, :as => :portfolios
+resources :portfolio, :controller => :portfolios, :only => :index, :as => :portfolios
 match 'about' => 'about#index', :as => :about
 match 'contact' => 'about#contact', :as => :contact
 match 'biography' => 'about#index'
 match 'bio' => 'about#index'
-match 'admin' => 'admin#index'
+resources :admin, :only => :index
 
-   namespace :admin do
-     # Directs /admin/products/* to Admin::ProductsController
-     # (app/controllers/admin/products_controller.rb)
-     resources :photos
-   end
+ namespace :admin do
+   # Directs /admin/products/* to Admin::ProductsController
+   # (app/controllers/admin/products_controller.rb)
+   resources :photos
+ end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

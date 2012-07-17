@@ -1,0 +1,5 @@
+<% @photos.each do |p| %>
+    <li><%= link_to p.title, p.url %></li>
+<% end %>
+
+ <%= link_to 'upload new image', new_admin_photo_path %>

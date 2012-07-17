@@ -1,0 +1,13 @@
+<%= form_for [:admin, @photo] do |f| %>
+    <%= label_tag(:picture, "Select an image:") %>
+    <%= f.file_field :picture, 'required' => '' %>
+    <%= label_tag(:title, "The short title that will appear when you hover over the image:") %>
+    <%= f.text_field :title, 'required' => '' %>
+    <%= label_tag(:description, "A longer description of the image (optional):") %>
+    <%= f.text_area :description %>
+    <%= label_tag(:sequence, "Order of the image on the page:") %>
+    <%= f.text_field :sequence %>
+    <%= label_tag(:visible, "Should the image be shown:") %>
+    <%= f.check_box :visible %>
+    <%= submit_tag("Upload Image") %>
+<% end %>
