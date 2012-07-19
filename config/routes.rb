@@ -1,4 +1,6 @@
 Victoria::Application.routes.draw do
+  devise_for :users
+
 resources :portfolio, :controller => :portfolios, :only => :index, :as => :portfolios
 match 'about' => 'about#index', :as => :about
 match 'contact' => 'about#contact', :as => :contact
@@ -60,7 +62,7 @@ resources :admin, :only => :index
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'portfolio#index'
+  root :to => 'portfolios#index'
 
   # See how all your routes lay out with "rake routes"
 

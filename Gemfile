@@ -6,16 +6,22 @@ gem 'bootstrap-sass', '~> 2.0.4.0'
 gem 'pg'
 # sdk for using Azure as asset storage
 gem 'waz-storage', '~> 1.1.3'
+#authentication and authorization
+gem 'devise'
+#gem 'cancan'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
   # To use debugger
   #gem 'ruby-debug19', :require => 'ruby-debug'
 end
 group :test do
   gem 'capybara'
+  gem 'cucumber-rails'
   # System-dependent gems
 end
 # Gems used only for assets and not required
