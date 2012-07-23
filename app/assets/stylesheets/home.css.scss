@@ -1,0 +1,34 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@media screen and (min-width: 400px) and (max-width: 1240px) {
+  .image_wrapper{
+    background-image: url('asparagus_Cropped_1240.jpeg');
+  }
+
+}
+@media screen and (min-width: 1241px) and (max-width: 1600px) {
+  .image_wrapper{
+    background-image: url('asparagus_Cropped_1600.jpeg');
+  }
+
+}
+.logo{
+  float: left;
+  height: 100%;
+  width: 100%;
+  img{
+    margin:auto;
+    display: block;
+  }
+}
+.image_wrapper{
+  background-position: center top;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: -1;
+}

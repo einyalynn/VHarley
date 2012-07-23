@@ -6,11 +6,15 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="home">
+
 <div class="necessarycontainertomakefullheight">
+<div class="image_wrapper">
+</div>
 <%= render 'shared/header' %>
 <%= render 'shared/menu' %>
 <%= yield %>
-    </div>
+  <div class="clear"></div>
+</div>
 </body>
 </html>

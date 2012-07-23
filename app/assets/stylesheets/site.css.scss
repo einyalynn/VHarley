@@ -1,2 +1,22 @@
+
+$linkColor: #404040;
 @import "bootstrap";
 @import "bootstrap-responsive";
+
+body, html{
+  height: 100%;
+}
+.necessarycontainertomakefullheight   {
+  position: relative;
+  min-height: 100%;
+}
+nav{
+  float: left;
+}
+.makefooterstayatbottom{
+  height:377px;
+
+}
+.clear{
+  clear: both;
+}
