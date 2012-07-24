@@ -2,18 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@media screen and (min-width: 400px) and (max-width: 1240px) {
-  .image_wrapper{
-    background-image: url('asparagus_Cropped_1240.jpeg');
-  }
-
-}
-@media screen and (min-width: 1241px) and (max-width: 1600px) {
-  .image_wrapper{
-    background-image: url('asparagus_Cropped_1600.jpeg');
-  }
-
-}
 .logo{
   float: left;
   height: 100%;
@@ -24,6 +12,7 @@
   }
 }
 .image_wrapper{
+  background-image: url('asparagus_Cropped_1240.jpeg');
   background-position: center top;
   height: 100%;
   width: 100%;
@@ -31,4 +20,33 @@
   top:0;
   left:0;
   z-index: -1;
+  background-color: #404040;
+  background-repeat: no-repeat;
+}
+.home{
+  nav{
+    li{
+      a, a:hover, a:visited, :active{
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .image_wrapper{
+    background-image: url('asparagus_Cropped_900.jpeg');
+  }
+
+}
+@media screen and (min-width: 901px) and (max-width: 1240px) {
+  .image_wrapper{
+    background-image: url('asparagus_Cropped_1240.jpeg');
+  }
+}
+@media screen and (min-width: 1241px) {
+  .image_wrapper{
+    background-image: url('asparagus_Cropped_1600.jpeg');
+  }
+
 }

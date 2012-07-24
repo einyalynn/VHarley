@@ -8,9 +8,17 @@
 </head>
 <body>
 <div class="necessarycontainertomakefullheight">
-<%= render 'shared/header' %>
-<%= render 'shared/menu' %>
-<%= yield %>
+  <div class="interiorContainerControlsWidth">
+    <%= render 'shared/header' %>
+    <div class="row">
+      <div class="span2">
+        <%= render 'shared/menu' %>
+      </div>
+      <div class="span10">
+        <%= yield %>
+      </div>
     </div>
+    </div>
+</div>
 </body>
 </html>

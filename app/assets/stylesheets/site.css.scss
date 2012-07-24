@@ -1,17 +1,44 @@
 
 $linkColor: #404040;
+$sansFontFamily: MuseoSlab500Regular;
 @import "bootstrap";
 @import "bootstrap-responsive";
 
 body, html{
   height: 100%;
+  padding: 0;
+  min-width: 365px;
 }
 .necessarycontainertomakefullheight   {
   position: relative;
   min-height: 100%;
 }
+.interiorContainerControlsWidth{
+  margin: auto;
+  padding: 0 15px;
+  max-width: 1240px;
+}
+header{
+  h1{
+    text-indent: -9999px;
+    height: 150px;
+    width: 300px;
+    margin: auto;
+  }
+}
 nav{
   float: left;
+  a{
+    text-decoration: underline;
+  }
+  ul{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+  }
+  li{
+    line-height: 3em;
+}
 }
 .makefooterstayatbottom{
   height:377px;
@@ -19,4 +46,47 @@ nav{
 }
 .clear{
   clear: both;
+}
+
+@media screen and (max-width: 500px) {
+  nav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    li{
+      border-color: white;
+      border-style: dotted;
+      border-width: 2px;
+      float: left;
+      margin: 2px;
+      padding: 0 15px;
+    }
+    ul{
+      display: table;
+      margin: 0 auto;
+    }
+  }
+  header{
+    h1{
+      height:auto;
+    }
+  }
+
+}
+@media screen and (min-width: 501px) and (max-width: 1240px) {
+  .interiorContainerControlsWidth{
+
+  }
+
+}
+@media screen and (min-width: 1241px) {
+  .interiorContainerControlsWidth{
+    width: 90%;
+    max-width: 1600px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+  }
+
 }

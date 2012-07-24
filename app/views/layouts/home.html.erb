@@ -3,18 +3,36 @@
 <head>
   <title>Victoria</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+
+  <%= raw '<!--[if lt ie 9]>' %>
+  <script src="<%= asset_path('/assets/html5shiv.js') %>"></script>
+  <%= raw '<![endif]-->' %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body class="home">
 
-<div class="necessarycontainertomakefullheight">
-<div class="image_wrapper">
-</div>
-<%= render 'shared/header' %>
-<%= render 'shared/menu' %>
-<%= yield %>
-  <div class="clear"></div>
-</div>
+    <div class="necessarycontainertomakefullheight">
+        <div class="image_wrapper">
+        </div>
+
+        <div class="interiorContainerControlsWidth">
+            <%= render 'shared/header' %>
+            <div class="row">
+                <div class="span2">
+                    <%= render 'shared/menu' %>
+                </div>
+
+
+            </div>
+          <div class="row">
+                <div class="span12">
+                    <%= yield %>
+                </div>
+
+          </div>
+        <div class="clear"></div>
+    </div>
+  </div>
 </body>
 </html>
