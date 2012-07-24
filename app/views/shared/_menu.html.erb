@@ -1,9 +1,9 @@
 <nav>
   <ul>
-    <li><%= link_to 'Portfolio', portfolios_path %> </li>
-    <li><%= link_to 'Bio {About}', about_path %> </li>
-    <li><%= link_to 'Contact', contact_path %> </li>
-    <li><%= link_to 'Blog', 'http://split-pin.blogspot.co.uk' %> </li>
+    <li><%= link_to 'PORTFOLIO', portfolios_path %> </li>
+    <li><%= link_to 'BIO {ABOUT}', about_path %> </li>
+    <li><%= link_to 'CONTACT', contact_path %> </li>
+    <li><%= link_to 'BLOG', 'http://split-pin.blogspot.co.uk' %> </li>
     <% if user_signed_in? %>
         <li> <%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
     <% end %>

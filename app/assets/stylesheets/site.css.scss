@@ -28,16 +28,21 @@ header{
 }
 nav{
   float: left;
-  a{
-    text-decoration: underline;
-  }
   ul{
     list-style-type: none;
     margin:0;
     padding:0;
+    font-size: 12px;
+    a{
+      display: block;
+      text-decoration: underline;
+    }
+    a:first-letter{
+      font-size: 16px;
+    }
   }
   li{
-    line-height: 3em;
+    line-height: 3.5em;
 }
 }
 .makefooterstayatbottom{
@@ -60,7 +65,10 @@ nav{
       border-width: 2px;
       float: left;
       margin: 2px;
-      padding: 0 15px;
+      padding: 0 9px;
+      a{
+        text-align: center;
+      }
     }
     ul{
       display: table;
