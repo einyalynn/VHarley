@@ -32,7 +32,14 @@
     }
   }
 }
+@media screen and (max-width: 500px) {
+  .home nav{
+    li{
+      border-color: #fff;
+    }
+  }
 
+}
 @media screen and (max-width: 900px) {
   .image_wrapper{
     background-image: url('asparagus_Cropped_900.jpeg');
