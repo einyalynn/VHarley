@@ -13,21 +13,26 @@ user = User.create! :email => ENV['ADMIN_EMAIL'].dup, :password => ENV['ADMIN_PA
 puts 'New user created: ' << user.email
 
 puts 'SEEDING IMAGES'
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/DSCF3096.JPG',
-              :title => "me",
-              :description => "who's me",
-              :visible =>true,
-              :horizontal =>false
 Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/1A_f.jpg',
               :title => "Figs",
               :portfolio => "food",
               :description => "",
               :visible =>true,
-              :horizontal =>false
+              :horizontal =>false,
+              :sequence => 1
 
 Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/3_f.jpg',
               :title => "Macaroons",
               :portfolio => "food",
               :description => "",
               :visible =>true,
-              :horizontal =>false
+              :horizontal =>false,
+              :sequence => 3
+
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/1B_f.jpg',
+              :title => "Bivalve",
+              :portfolio => "food",
+              :description => "",
+              :visible =>true,
+              :horizontal =>false,
+              :sequence => 2
