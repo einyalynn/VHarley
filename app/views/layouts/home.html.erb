@@ -5,7 +5,7 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
 
   <%= raw '<!--[if lt ie 9]>' %>
-  <script src="<%= asset_path('html5shiv.js') %>"></script>
+  <%= javascript_include_tag "html5shiv.js" %>
   <%= raw '<![endif]-->' %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
