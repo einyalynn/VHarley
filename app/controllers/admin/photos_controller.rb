@@ -13,14 +13,9 @@ module Admin
      end
     public
      def index
-        @photos = Photo.all.sort { |a, b|
-           a.portfolio <=> b.portfolio
-        }.sort { |a, b|
-          if a.portfolio <=> b.portfolio != 0
-            return a.portfolio <=> b.portfolio
-          else
-            return a.sequence <=> b.sequence
-          end
+        unsortedphotos = Photo.all
+       @photos = unsortedphotos.sort { |a, b|
+          [a.portfolio, a.sequence] <=> [b.portfolio, b.sequence]
         }
      end
      def show
