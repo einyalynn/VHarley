@@ -35,7 +35,7 @@ module Admin
                                  portfolio: params[:photo][:portfolio],
                                  horizontal: false)
            if new_photo.save
-             render 'index'
+             redirect_to :action => :index
            else
              render 'new'
            end
