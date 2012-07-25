@@ -5,9 +5,9 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
 
   <%= raw '<!--[if lt ie 9]>' %>
-  <%= javascript_include_tag "html5shiv.js" %>
+  <%= javascript_include_tag "ltie9/html5shiv" %>
   <%= raw '<![endif]-->' %>
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "all/application" %>
   <%= csrf_meta_tags %>
 </head>
 <body class="home">
