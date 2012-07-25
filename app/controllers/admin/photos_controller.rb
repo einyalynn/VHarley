@@ -13,7 +13,15 @@ module Admin
      end
     public
      def index
-        @photos = Photo.all
+        @photos = Photo.all.sort { |a, b|
+           a.portfolio <=> b.portfolio
+        }.sort { |a, b|
+          if a.portfolio <=> b.portfolio != 0
+            return a.portfolio <=> b.portfolio
+          else
+            return a.sequence <=> b.sequence
+          end
+        }
      end
      def show
        @photo = Photo.find params[:id]
