@@ -15,6 +15,12 @@ module Admin
      def index
         @photos = Photo.all
      end
+     def show
+       @photo = Photo.find params[:id]
+     end
+     def edit
+       @photo = Photo.find params[:id]
+     end
      def new
         @photo = Photo.new
      end
@@ -37,9 +43,17 @@ module Admin
            if new_photo.save
              redirect_to :action => :index
            else
-             render 'new'
+             render :show
            end
          end
+       end
+     end
+     def update
+       @photo = Photo.find(params[:id])
+       if @photo.update_attributes(params[:photo])
+         redirect_to :action => :index
+       else
+           render :show
        end
      end
    end

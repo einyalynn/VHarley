@@ -18,3 +18,16 @@ Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/DSCF3096.JPG',
               :description => "who's me",
               :visible =>true,
               :horizontal =>false
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/1A_f.jpg',
+              :title => "Figs",
+              :portfolio => "food",
+              :description => "",
+              :visible =>true,
+              :horizontal =>false
+
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/3_f.jpg',
+              :title => "Macaroons",
+              :portfolio => "food",
+              :description => "",
+              :visible =>true,
+              :horizontal =>false
