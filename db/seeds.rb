@@ -11,3 +11,10 @@ puts 'user '  + ENV['ADMIN_EMAIL']
 puts 'password ' + ENV['ADMIN_PASSWORD']
 user = User.create! :email => ENV['ADMIN_EMAIL'].dup, :password => ENV['ADMIN_PASSWORD'].dup, :password_confirmation => ENV['ADMIN_PASSWORD'].dup,:owner=>true
 puts 'New user created: ' << user.email
+
+puts 'SEEDING IMAGES'
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/DSCF3096.JPG',
+              :title => "me",
+              :description => "who's me",
+              :visible =>true,
+              :horizontal =>false

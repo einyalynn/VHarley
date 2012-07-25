@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120718205207) do
+ActiveRecord::Schema.define(:version => 20120725201519) do
 
   create_table "photos", :force => true do |t|
     t.string   "title"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20120718205207) do
     t.boolean  "visible"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.boolean  "horizontal"
   end
 
   create_table "users", :force => true do |t|
