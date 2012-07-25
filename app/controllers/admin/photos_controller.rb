@@ -32,6 +32,7 @@ module Admin
                                  url:new_photo_blob.url,
                                  visible: params[:photo][:visible],
                                  sequence: params[:photo][:sequence],
+                                 portfolio: params[:photo][:portfolio],
                                  horizontal: false)
            if new_photo.save
              render 'index'
