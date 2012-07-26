@@ -7,16 +7,13 @@ module Admin
      def doAdminAuthentication
        :authenticate_user!
 
-       unless current_user.owner
+       unless !current_user.owner.nil? && current_user.owner
          not_found
        end
      end
     public
      def index
-        unsortedphotos = Photo.all
-       @photos = unsortedphotos.sort { |a, b|
-          [a.portfolio, a.sequence] <=> [b.portfolio, b.sequence]
-        }
+        @photos = Photo.all :order => [:portfolio, :sequence]
      end
      def show
        @photo = Photo.find params[:id]
