@@ -1,7 +1,7 @@
 Victoria::Application.routes.draw do
   devise_for :users
 
-resources :portfolio, :controller => :portfolios, :only => :index, :as => :portfolios
+resources :portfolio, :controller => :portfolios, :only => [:index, :show], :as => :portfolios
 match 'about' => 'about#index', :as => :about
 match 'contact' => 'about#contact', :as => :contact
 match 'biography' => 'about#index'

@@ -1,0 +1,5 @@
+<% @photos.each do |p| %>
+
+    <%= image_tag p.url, :alt => p.title %>
+    <br />
+<% end %>
