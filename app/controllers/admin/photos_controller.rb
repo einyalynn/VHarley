@@ -7,7 +7,7 @@ module Admin
      def doAdminAuthentication
        :authenticate_user!
 
-       unless !current_user.owner.nil? && current_user.owner
+       unless !current_user.nil? && current_user.owner
          not_found
        end
      end
