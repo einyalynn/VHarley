@@ -30,7 +30,7 @@ Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/3_f.jpg',
               :sequence => 3
 
 Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/1B_f.jpg',
-              :title => "Bivalve",
+              :title => "Bean",
               :portfolio => "food",
               :description => "",
               :visible =>true,
