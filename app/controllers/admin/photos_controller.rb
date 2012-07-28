@@ -56,5 +56,9 @@ module Admin
            render :show
        end
      end
+     def destroy
+       Photo.destroy(params[:id])
+       redirect_to :action => :index
+     end
    end
 end
