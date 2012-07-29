@@ -13,242 +13,154 @@ user = User.create! :email => ENV['ADMIN_EMAIL'].dup, :password => ENV['ADMIN_PA
 puts 'New user created: ' << user.email
 
 puts 'SEEDING IMAGES'
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/1A_f.jpg',
-              :title => "Figs",
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/A-1_f.jpg',
+              :title => "Bundt Tins",
               :portfolio => "food",
               :description => "",
               :visible =>true,
               :horizontal =>false,
               :sequence => 1
 
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/3_f.jpg',
-              :title => "Macaroons",
-              :portfolio => "food",
-              :description => "",
-              :visible =>true,
-              :horizontal =>false,
-              :sequence => 3
-
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/1B_f.jpg',
-              :title => "Bean",
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/B-1_f.jpg',
+              :title => "Bundt Cake",
               :portfolio => "food",
               :description => "",
               :visible =>true,
               :horizontal =>false,
               :sequence => 2
 
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/4_f.jpg',
-              :title => "Macaroon",
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/C-1_f.jpg',
+              :title => "Coffee",
+              :portfolio => "food",
+              :description => "",
+              :visible =>true,
+              :horizontal =>false,
+              :sequence => 3
+
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/D-1_f.jpg',
+              :title => "Coffee Filter",
               :portfolio => "food",
               :description => "",
               :visible =>true,
               :horizontal =>false,
               :sequence => 4
 
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/5_f.jpg',
-              :title => "Mince Pies",
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/E-1_f.jpg',
+              :title => "Bean",
               :portfolio => "food",
               :description => "",
               :visible =>true,
               :horizontal =>false,
               :sequence => 5
 
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/6_f.jpg',
-              :title => "Kiwi Tart",
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/F-1_f.jpg',
+              :title => "Figs",
               :portfolio => "food",
               :description => "",
               :visible =>true,
               :horizontal =>false,
               :sequence => 6
 
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/7_f.jpg',
-              :title => "Raspberry Angelfood Cake",
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/G-1_f.jpg',
+              :title => "Baking Ingredients",
               :portfolio => "food",
               :description => "",
               :visible =>true,
               :horizontal =>false,
               :sequence => 7
 
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/8_f.jpg',
-              :title => "Sweets Table",
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/H-1_f.jpg',
+              :title => "Almond Meringue",
               :portfolio => "food",
               :description => "",
               :visible =>true,
               :horizontal =>false,
               :sequence => 8
 
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/10_f.jpg',
-              :title => "Apple",
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/I-1_f.jpg',
+              :title => "Ingredients",
               :portfolio => "food",
               :description => "",
               :visible =>true,
               :horizontal =>false,
               :sequence => 9
 
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/11_f.jpg',
-              :title => "Dinner",
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/J-1_f.jpg',
+              :title => "Plated Leeks",
               :portfolio => "food",
               :description => "",
               :visible =>true,
               :horizontal =>false,
               :sequence => 10
 
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/13_f.jpg',
-              :title => "Coffees",
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/K-1_f.jpg',
+              :title => "Lemon and Rhubarb",
               :portfolio => "food",
               :description => "",
               :visible =>true,
               :horizontal =>false,
               :sequence => 11
 
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/14_f.jpg',
-              :title => "Coffee",
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/L-1_f.jpg',
+              :title => "Christmas Ornament",
               :portfolio => "food",
               :description => "",
               :visible =>true,
               :horizontal =>false,
               :sequence => 12
 
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/15_f.jpg',
-              :title => "Coffee Creation",
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/M-1_f.jpg',
+              :title => "Cupcake Candycane",
               :portfolio => "food",
               :description => "",
               :visible =>true,
               :horizontal =>false,
               :sequence => 13
 
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/16_f.jpg',
-              :title => "Coffee Filter",
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/N-1_f.jpg',
+              :title => "New Potatoes",
               :portfolio => "food",
               :description => "",
               :visible =>true,
               :horizontal =>false,
               :sequence => 14
 
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/18_f.jpg',
-              :title => "Almond Meringue",
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/O-1_f.jpg',
+              :title => "Burgers",
               :portfolio => "food",
               :description => "",
               :visible =>true,
               :horizontal =>false,
               :sequence => 15
 
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/19_f.jpg',
-              :title => "Ingredients",
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/P-1_f.jpg',
+              :title => "Asparagus",
               :portfolio => "food",
               :description => "",
               :visible =>true,
               :horizontal =>false,
               :sequence => 16
 
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/20_f.jpg',
-              :title => "Peach Tart",
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/Q-1_f.jpg',
+              :title => "Pear",
               :portfolio => "food",
               :description => "",
               :visible =>true,
               :horizontal =>false,
               :sequence => 17
 
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/21_f.jpg',
-              :title => "New Potatoes",
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/R-1_f.jpg',
+              :title => "Museli",
               :portfolio => "food",
               :description => "",
               :visible =>true,
               :horizontal =>false,
               :sequence => 18
 
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/22_f.jpg',
-              :title => "Blackberry Panna cotta",
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/S-1_f.jpg',
+              :title => "Raspberry Sorbet",
               :portfolio => "food",
               :description => "",
               :visible =>true,
               :horizontal =>false,
               :sequence => 19
-
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/23_f.jpg',
-              :title => "Cupcake",
-              :portfolio => "food",
-              :description => "",
-              :visible =>true,
-              :horizontal =>false,
-              :sequence => 20
-
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/24_f.jpg',
-              :title => "Raspberry Jam",
-              :portfolio => "food",
-              :description => "",
-              :visible =>true,
-              :horizontal =>false,
-              :sequence => 21
-
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/25_f.jpg',
-              :title => "Pear",
-              :portfolio => "food",
-              :description => "",
-              :visible =>true,
-              :horizontal =>false,
-              :sequence => 22
-
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/26_f.jpg',
-              :title => "Burgers",
-              :portfolio => "food",
-              :description => "",
-              :visible =>true,
-              :horizontal =>false,
-              :sequence => 23
-
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/27_f.jpg',
-              :title => "Olives",
-              :portfolio => "food",
-              :description => "",
-              :visible =>true,
-              :horizontal =>false,
-              :sequence => 24
-
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/28_f.jpg',
-              :title => "Dinner Ingredients",
-              :portfolio => "food",
-              :description => "",
-              :visible =>true,
-              :horizontal =>false,
-              :sequence => 25
-
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/29_f.jpg',
-              :title => "Leeks",
-              :portfolio => "food",
-              :description => "",
-              :visible =>true,
-              :horizontal =>false,
-              :sequence => 26
-
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/30_f.jpg',
-              :title => "Plated Leeks",
-              :portfolio => "food",
-              :description => "",
-              :visible =>true,
-              :horizontal =>false,
-              :sequence => 27
-
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/31_f.jpg',
-              :title => "Lemon and Rhubarb",
-              :portfolio => "food",
-              :description => "",
-              :visible =>true,
-              :horizontal =>false,
-              :sequence => 28
-
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/asparagus_f.jpg',
-              :title => "Asparagus",
-              :portfolio => "food",
-              :description => "",
-              :visible =>true,
-              :horizontal =>false,
-              :sequence => 29
-
-Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/cupcake_f.jpg',
-              :title => "Cupcake Candycane",
-              :portfolio => "food",
-              :description => "",
-              :visible =>true,
-              :horizontal =>false,
-              :sequence => 30
