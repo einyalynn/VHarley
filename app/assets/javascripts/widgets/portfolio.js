@@ -21,6 +21,9 @@ $.widget('dlr.portfolio',{
                 index++;
                 if(index < images.length && $(images[index]).outerHeight() > $(images[index]).outerWidth()){
                     pageDiv.append(images[index]);
+                } else
+                {
+                    index--;
                 }
             }
             this._pageList[this._pageCount] = pageDiv;
