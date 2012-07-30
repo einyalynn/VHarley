@@ -2,82 +2,78 @@ $.widget('dlr.portfolio',{
     options:{
 
     },
-    _currentImages: [],
-    _imageList: [],
+    _currentPage: null,
+    _pageCount: 0,
+    _pageList: [],
     _create: function(){
         var images = this.element.find('div.image');
-        for(var x = 0; x < images.length; x++){
-            this._imageList[x] = images[x];
+        var index = 0;
+        while (index < images.length){
+            this._pageCount++;
+            var pageClass = 'page_' + this._pageCount;
+            this.element.find('.portfolio-pager').append('<span class=' + pageClass + '>' + this._pageCount + '</span>')
+            var pageDiv = $('<div class="portfolio-page"></div>');
+
+            var height = $(images[index]).outerHeight();
+            var width = $(images[index]).outerWidth();
+            pageDiv.append(images[index]);
+            if(height > width){
+                index++;
+                if(index < images.length && $(images[index]).outerHeight() > $(images[index]).outerWidth()){
+                    pageDiv.append(images[index]);
+                }
+            }
+            this._pageList[this._pageCount] = pageDiv;
+            index++;
         }
-        images.remove();
-        this.next();
+        if(this._pageCount > 0){
+            this._currentPage = 1;
+            this._showCurrentPage();
+        }
     },
     next: function(){
-       var newStart;
-       var oldImages = this._currentImages, newImages = [];
-       if(oldImages.length > 0){
-           newStart = oldImages[oldImages.length - 1] + 1;
-       }  else{
-           newStart = 0;
-       }
-       if(this._imageList[newStart]){
-            newImages.push(newStart)
-       } else {
-           newStart = 0;
-           if(this._imageList[0]){
-               newImages.push(0)
-           }
-       }
-       if(this._imageList[newStart + 1]){
-           newImages.push(newStart + 1)
-       } else {
-           if(this._imageList[0]){
-               newImages.push(0)
-           }
-       }
+        this._setCurrentPage(1);
+        this._showCurrentPage();
 
-       this._currentImages = newImages;
-       var container = this.element.find("div.portfolio-container");
-       var availableImages = this._imageList;
-       container.hide('slide',{direction: 'left'}, 1000, function(){
-           container.empty();
-           for(var x=0; x < newImages.length; x++){
-             container.append(availableImages[newImages[x]]);
-           }
-       }).delay(200).show('slide', {direction: 'right'}, 1000);
+//       this._currentImages = newImages;
+//       var container = this.element.find("div.portfolio-container");
+//       var availableImages = this._imageList;
+//       container.hide('slide',{direction: 'left'}, 1000, function(){
+//           container.empty();
+//           for(var x=0; x < newImages.length; x++){
+//             container.append(availableImages[newImages[x]]);
+//           }
+//       }).delay(200).show('slide', {direction: 'right'}, 1000);
     },
     previous: function(){
-        var newStart;
-        var oldImages = this._currentImages, newImages = [];
-        var availableImages = this._imageList;
-        if(oldImages.length > 0){
-            newStart = oldImages[0] - 1;
-        }  else{
-            newStart = 0;
-        }
-        if(availableImages[newStart]){
-            newImages.push(newStart)
-        } else {
-            newStart = availableImages.length-1;
-            if(availableImages[newStart]){
-                newImages.push(newStart)
-            }
-        }
-        if(availableImages[newStart - 1]){
-            newImages.push(newStart - 1)
-        } else {
-            if(availableImages[availableImages.length-1]){
-                newImages.push(availableImages.length-1)
-            }
-        }
 
-        this._currentImages = newImages.reverse();
+        this._setCurrentPage(-1);
+        this._showCurrentPage();
+
+//        this._currentImages = newImages.reverse();
+//        var container = this.element.find("div.portfolio-container");
+//        container.hide('slide',{direction: 'right'}, 1000, function(){
+//            container.empty();
+//            for(var x=0; x < newImages.length; x++){
+//                container.append(availableImages[newImages[x]]);
+//            }
+//        }).delay(200).show('slide', {direction: 'left'}, 1000);
+    },
+    _setCurrentPage: function(increment){
+        var trialNewPage = this._currentPage + increment;
+
+        if(trialNewPage < 1){
+            this._currentPage = this._pageCount;
+        }  else if (trialNewPage > this._pageCount) {
+            this._currentPage = 1;
+        } else {
+            this._currentPage = trialNewPage;
+        }
+    },
+    _showCurrentPage: function(){
+
         var container = this.element.find("div.portfolio-container");
-        container.hide('slide',{direction: 'right'}, 1000, function(){
-            container.empty();
-            for(var x=0; x < newImages.length; x++){
-                container.append(availableImages[newImages[x]]);
-            }
-        }).delay(200).show('slide', {direction: 'left'}, 1000);
+        container.empty();
+        container.append(this._pageList[this._currentPage]);
     }
 })
