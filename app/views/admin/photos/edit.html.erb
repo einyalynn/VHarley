@@ -1,4 +1,6 @@
+
 <p><%= link_to "Back to List", admin_photos_path %>  </p>
+<br />
 
 <%= form_for [:admin, @photo] do |f| %>
 
@@ -12,8 +14,10 @@
     <%= f.check_box :visible %>
     <%= label_tag(:horizontal, "Is the image horizontal:") %>
     <%= f.check_box :horizontal %>
-    <%= label_tag(:picture, "Select an image:") %>
-    <%= f.file_field :picture, 'required' => '' %>
+    <%= label_tag(:url, "Photo Location:") %>
+    <%= f.text_field :url %>
     <br />
-    <%= submit_tag("Upload Image") %>
+    <%= submit_tag("Update") %>
 <% end %>
+
+<%= image_tag @photo.url, :alt => @photo.title %>

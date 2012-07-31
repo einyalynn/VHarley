@@ -7,13 +7,19 @@ module Admin
      def doAdminAuthentication
        :authenticate_user!
 
-       unless current_user.owner
+       unless !current_user.nil? && current_user.owner
          not_found
        end
      end
     public
      def index
-        @photos = Photo.all
+        @photos = Photo.all :order => [:portfolio, :sequence]
+     end
+     def show
+       @photo = Photo.find params[:id]
+     end
+     def edit
+       @photo = Photo.find params[:id]
      end
      def new
         @photo = Photo.new
@@ -31,14 +37,28 @@ module Admin
                                  description:params[:photo][:description],
                                  url:new_photo_blob.url,
                                  visible: params[:photo][:visible],
-                                 sequence: params[:photo][:sequence])
+                                 sequence: params[:photo][:sequence],
+                                 portfolio: params[:photo][:portfolio],
+                                 horizontal: false)
            if new_photo.save
-             render 'index'
+             redirect_to :action => :index
            else
-             render 'new'
+             render :show
            end
          end
        end
+     end
+     def update
+       @photo = Photo.find(params[:id])
+       if @photo.update_attributes(params[:photo])
+         redirect_to :action => :index
+       else
+           render :show
+       end
+     end
+     def destroy
+       Photo.destroy(params[:id])
+       redirect_to :action => :index
      end
    end
 end

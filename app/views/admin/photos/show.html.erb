@@ -1,0 +1,14 @@
+
+<p><%= link_to "Back to List", admin_photos_path %>  </p>
+<br />
+<p>Title: <%= @photo.title %></p>
+<p>Url: <%= @photo.url %></p>
+<p>Portfolio: <%= @photo.portfolio %></p>
+<p>Visible: <%= @photo.visible %></p>
+<p>Description:<%= @photo.description %> </p>
+<p><%= link_to "Edit", edit_admin_photo_path(@photo) %></p>
+<br />
+<%= image_tag @photo.url, :alt => @photo.title %>
+<br />
+<p><%= link_to "Perma Delete, really really", admin_photo_path(@photo), :method => :delete %></p>
+

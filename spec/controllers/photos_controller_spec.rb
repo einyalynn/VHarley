@@ -13,4 +13,10 @@ describe Admin::PhotosController do
       response.code.should eq("200")
     end
   end
+  describe "GET Show" do
+    it "return HTTP code 200" do
+      get :show
+      response.code.should eq("200")
+    end
+  end
 end

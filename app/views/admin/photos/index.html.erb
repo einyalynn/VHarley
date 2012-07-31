@@ -1,5 +1,16 @@
-<% @photos.each do |p| %>
-    <li><%= link_to p.title, p.url %></li>
-<% end %>
-
- <%= link_to 'upload new image', new_admin_photo_path %>
+<p><%= link_to "Back to List", admin_photos_path %>  </p>
+<br/>
+<p>All available images</p>
+<ul>
+  <% @photos.each do |p| %>
+      <li> <% if p.visible %>
+            <strong>
+        <% end %>
+        <%= link_to p.title + ": " + p.portfolio, admin_photo_path(p) %>
+        <% if p.visible %>
+            </strong>
+        <% end %>
+      </li>
+  <% end %>
+</ul>
+<p><%= link_to 'upload new image', new_admin_photo_path %> </p>
