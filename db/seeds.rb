@@ -98,7 +98,7 @@ Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/K-1_f.jpg',
               :portfolio => "food",
               :description => "",
               :visible =>true,
-              :horizontal =>false,
+              :horizontal =>true,
               :sequence => 11
 
 Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/L-1_f.jpg',
@@ -164,3 +164,71 @@ Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/S-1_f.jpg',
               :visible =>true,
               :horizontal =>false,
               :sequence => 19
+
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/A-1_i.jpg',
+              :title => "Through Door", :portfolio => "interiors", :description => "", :visible =>true, :horizontal =>false,
+              :sequence => 1
+
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/A-2_i.jpg',
+              :title => "Through Door", :portfolio => "interiors", :description => "", :visible =>false, :horizontal =>false,
+              :sequence => 1
+
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/B-1_i.jpg',
+              :title => "Framed Art", :portfolio => "interiors", :description => "", :visible =>true, :horizontal =>false,
+              :sequence => 2
+
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/C-1_i.jpg',
+              :title => "Board and Table", :portfolio => "interiors", :description => "", :visible =>true, :horizontal =>false,
+              :sequence => 3
+
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/D-1_i.jpg',
+              :title => "Sawhorse Table", :portfolio => "interiors", :description => "", :visible =>true, :horizontal =>false,
+              :sequence => 4
+
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/E-1_i.jpg',
+              :title => "Comfy Chair", :portfolio => "interiors", :description => "", :visible =>true, :horizontal =>false,
+              :sequence => 5
+
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/F-1_i.jpg',
+              :title => "Tassel", :portfolio => "interiors", :description => "", :visible =>true, :horizontal =>false,
+              :sequence => 6
+
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/G-1_i.jpg',
+              :title => "Outdoors", :portfolio => "interiors", :description => "", :visible =>true, :horizontal =>true,
+              :sequence => 7
+
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/H-1_i.jpg',
+              :title => "Sewing Table", :portfolio => "interiors", :description => "", :visible =>true, :horizontal =>false,
+              :sequence => 8
+
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/I-1_i.jpg',
+              :title => "Thread and Notions", :portfolio => "interiors", :description => "", :visible =>true, :horizontal =>false,
+              :sequence => 9
+
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/J-1_i.jpg',
+              :title => "11", :portfolio => "interiors", :description => "", :visible =>true, :horizontal =>false,
+              :sequence => 10
+
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/K-1_i.jpg',
+              :title => "Crate and Chair", :portfolio => "interiors", :description => "", :visible =>true, :horizontal =>false,
+              :sequence => 11
+
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/L-1_i.jpg',
+              :title => "Shade", :portfolio => "interiors", :description => "", :visible =>true, :horizontal =>true,
+              :sequence => 12
+
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/M-1_i.jpg',
+              :title => "Vegetable Stand", :portfolio => "interiors", :description => "", :visible =>true, :horizontal =>false,
+              :sequence => 13
+
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/N-1_i.jpg',
+              :title => "Shop Interior", :portfolio => "interiors", :description => "", :visible =>true, :horizontal =>false,
+              :sequence => 14
+
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/O-1_i.jpg',
+              :title => "Twine", :portfolio => "interiors", :description => "", :visible =>true, :horizontal =>false,
+              :sequence => 15
+
+Photo.create! :url=>'http://drose.blob.core.windows.net/split-pin/P-1_i.jpg',
+              :title => "Gourds", :portfolio => "interiors", :description => "", :visible =>true, :horizontal =>false,
+              :sequence => 16

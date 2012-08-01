@@ -7,8 +7,32 @@
 }
 .image{
   float: left;
+  margin: 20px 20px 20px 0;
 }
-.portfolio-slider, .portfolio-container{
-  height: 600px;
-  width: 700px;
+.image-right{
+  margin-left: 20px;
+  margin-right: 0px;
+}
+.image-horizontal{
+  margin:20px;
+}
+.portfolio-slider{
+  height: 500px;
+  width: 690px;
+
+}
+.portfolio-pager{
+  float:left;
+}
+.portfolio-left, .portfolio-right{
+  height: 500px;
+  position: relative;
+  width: 20px;
+  float: left;
+  i{
+    margin-top: 200px;
+  }
+}
+.portfolio-right{
+  float: right;
 }
