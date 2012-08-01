@@ -19,11 +19,15 @@ body, html{
   max-width: 1240px;
 }
 header{
+  padding-top: 30px;
+  padding-bottom: 30px;
   h1{
     text-indent: -9999px;
-    height: 150px;
-    width: 300px;
+    height: 109px;
+    width: 334px;
     margin: auto;
+    background-image: url('full_logo.png');
+    background-repeat: no-repeat;
   }
 }
 nav{

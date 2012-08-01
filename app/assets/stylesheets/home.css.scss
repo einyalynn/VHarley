@@ -24,6 +24,11 @@
   background-repeat: no-repeat;
 }
 .home{
+  header{
+    h1{
+      background-image: none;
+    }
+  }
   nav{
     li{
       a, a:hover, a:visited, :active{
