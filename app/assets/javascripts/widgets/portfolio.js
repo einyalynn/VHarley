@@ -14,7 +14,7 @@ $.widget('dlr.portfolio',{
         while (index < images.length){
             this._pageCount++;
             var pageClass = 'page_' + this._pageCount;
-            this.element.find('.portfolio-pager').append('<span class=' + pageClass + '>' + this._pageCount + '</span>')
+            this.element.find('.portfolio-pager').append('<span class=' + pageClass + '>' + this._pageCount + '</span>');
             var pageDiv = $('<div class="portfolio-page"></div>');
             //horizontal indicator is needed as can't get height and width if the images haven't fully loaded
             //and I must assume that the images aren't fully loaded yet!
@@ -84,4 +84,4 @@ $.widget('dlr.portfolio',{
         container.empty();
         container.append(this._pageList[this._currentPage]);
     }
-})
+});
