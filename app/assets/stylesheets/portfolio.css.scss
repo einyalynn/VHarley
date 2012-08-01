@@ -5,34 +5,73 @@
 .portfolio-slider > .image{
   display:none;
 }
-.image{
-  float: left;
-  margin: 20px 20px 20px 0;
-}
-.image-right{
-  margin-left: 20px;
-  margin-right: 0px;
-}
-.image-horizontal{
-  margin:20px;
-}
 .portfolio-slider{
   height: 500px;
   width: 690px;
 
-}
-.portfolio-pager{
-  float:left;
-}
-.portfolio-left, .portfolio-right{
-  height: 500px;
-  position: relative;
-  width: 20px;
-  float: left;
-  i{
-    margin-top: 200px;
+  .image{
+    float: left;
+    margin: 20px 20px 20px 0;
+  }
+  .image-right{
+    margin-left: 20px;
+    margin-right: 0px;
+  }
+  .image-horizontal{
+    margin:20px;
+  }
+  .portfolio-pager{
+     float:left;
+   }
+  .portfolio-left, .portfolio-right{
+    height: 500px;
+    position: relative;
+    width: 20px;
+    float: left;
+    i{
+      margin-top: 200px;
+    }
+  }
+  .portfolio-right{
+    float: right;
   }
 }
-.portfolio-right{
-  float: right;
+
+.portfolio-link{
+  position: relative;
+  min-width: 250px;
+  height: 683px;
+  margin-bottom: 20px;
+  img{
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    opacity: .5;
+    left: 0;
+    position: relative;
+    top: -18px;
+    width: 250px;
+    height: 683px;
+    margin-bottom: auto;
+  }
+  a{
+    position: relative;
+    width: 250px;
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+    color: #ffffff;
+    letter-spacing: 5px;
+    span{
+      z-index: 1;
+      position: relative;
+      top: 250px;
+    }
+    span.last{
+      letter-spacing: 0px;
+      top:0;
+    }
+  }
+  a:hover, a:visited, a:active{
+    color: #ffffff;
+  }
 }
