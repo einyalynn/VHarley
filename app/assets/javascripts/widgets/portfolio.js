@@ -8,9 +8,7 @@ $.widget('dlr.portfolio',{
     _create: function(){
         var images = this.element.find('div.image');
         var index = 0;
-        var widgetContext= this;
-        this.element.find('.portfolio-left').click($.proxy(this.previous, widgetContext));
-        this.element.find('.portfolio-right').click($.proxy(this.next, widgetContext));
+        this._bindEvents();
         while (index < images.length){
             this._pageCount++;
             var pageClass = 'page_' + this._pageCount;
@@ -83,5 +81,16 @@ $.widget('dlr.portfolio',{
         var container = this.element.find("div.portfolio-container");
         container.empty();
         container.append(this._pageList[this._currentPage]);
+    },
+    _bindEvents: function(){
+        var widgetContext= this;
+        this.element.find('.portfolio-left').click($.proxy(this.previous, widgetContext));
+        this.element.find('.portfolio-right').click($.proxy(this.next, widgetContext));
+        this.element.bind('swiperight', $.proxy(this.previous, widgetContext));
+        this.element.bind('swiperightup', $.proxy(this.previous, widgetContext));
+        this.element.bind('swiperightdown', $.proxy(this.previous, widgetContext));
+        this.element.bind('swipeleft', $.proxy(this.next, widgetContext));
+        this.element.bind('swipeleftup', $.proxy(this.next, widgetContext));
+        this.element.bind('swipeleftdown', $.proxy(this.next, widgetContext));
     }
 });

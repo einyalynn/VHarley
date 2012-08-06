@@ -1,24 +1,39 @@
 // Place all the styles related to the portfolio controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+.portfolio-container {
+  height: inherit;
+  position: absolute;
+  width: inherit;
+}
+.portfolio-page {
+  height: 100%;
+  padding-left: 20px;
+  width: 100%;
+}
 .portfolio-slider > .image{
   display:none;
 }
 .portfolio-slider{
   height: 500px;
-  width: 690px;
-
+  width: 735px;
+  margin: auto;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  div{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
   .image{
     float: left;
     margin: 20px 20px 20px 0;
   }
   .image-right{
-    margin-left: 20px;
+    margin-left: 70px;
     margin-right: 0px;
   }
   .image-horizontal{
-    margin:20px;
+    margin:20px 44px;
   }
   .portfolio-pager{
      float:left;
@@ -26,13 +41,14 @@
   .portfolio-left, .portfolio-right{
     height: 500px;
     position: relative;
-    width: 20px;
     float: left;
+    width: 350px;
+    z-index: 1;
     i{
       margin-top: 200px;
     }
   }
-  .portfolio-right{
+  .portfolio-right, .portfolio-right i{
     float: right;
   }
 }
@@ -43,9 +59,9 @@
   height: 683px;
   margin-bottom: 20px;
   img{
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-    filter: alpha(opacity=50);
-    opacity: .5;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
+    filter: alpha(opacity=65);
+    opacity: .65;
     left: 0;
     position: relative;
     top: -18px;
