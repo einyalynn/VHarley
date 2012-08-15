@@ -86,21 +86,5 @@ $.widget('dlr.portfolio',{
         var widgetContext= this;
         this.element.find('.portfolio-left').click($.proxy(this.previous, widgetContext));
         this.element.find('.portfolio-right').click($.proxy(this.next, widgetContext));
-        var portfolioSlider= this.element.find('.portfolio-slider');
-        $(portfolioSlider).touchwipe({
-            wipeLeft: function() { alert("left"); },
-            wipeRight: function() { alert("right"); },
-            min_move_x: 20,
-            min_move_y: 20,
-            preventDefaultEvents: true
-        });
-        //$(portfolioSlider).swiperight($.proxy(this.previous, widgetContext));
-        //$(portfolioSlider).swipeleft($.proxy(this.next, widgetContext));
-//        this.element.find('.portfolio-slider').bind('swiperight', $.proxy(this.previous, widgetContext));
-//        this.element.find('.portfolio-slider').bind('swiperightup', $.proxy(this.previous, widgetContext));
-//        this.element.find('.portfolio-slider').bind('swiperightdown', $.proxy(this.previous, widgetContext));
-//        this.element.find('.portfolio-slider').bind('swipeleft', $.proxy(this.next, widgetContext));
-//        this.element.find('.portfolio-slider').bind('swipeleftup', $.proxy(this.next, widgetContext));
-//        this.element.find('.portfolio-slider').bind('swipeleftdown', $.proxy(this.next, widgetContext));
     }
 });
