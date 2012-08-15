@@ -86,11 +86,14 @@ $.widget('dlr.portfolio',{
         var widgetContext= this;
         this.element.find('.portfolio-left').click($.proxy(this.previous, widgetContext));
         this.element.find('.portfolio-right').click($.proxy(this.next, widgetContext));
-        this.element.bind('swiperight', $.proxy(this.previous, widgetContext));
-        this.element.bind('swiperightup', $.proxy(this.previous, widgetContext));
-        this.element.bind('swiperightdown', $.proxy(this.previous, widgetContext));
-        this.element.bind('swipeleft', $.proxy(this.next, widgetContext));
-        this.element.bind('swipeleftup', $.proxy(this.next, widgetContext));
-        this.element.bind('swipeleftdown', $.proxy(this.next, widgetContext));
+        var portfolioSlider= this.element.find('.portfolio-slider');
+        $(portfolioSlider).swiperight($.proxy(this.previous, widgetContext));
+        $(portfolioSlider).swipeleft($.proxy(this.next, widgetContext));
+//        this.element.find('.portfolio-slider').bind('swiperight', $.proxy(this.previous, widgetContext));
+//        this.element.find('.portfolio-slider').bind('swiperightup', $.proxy(this.previous, widgetContext));
+//        this.element.find('.portfolio-slider').bind('swiperightdown', $.proxy(this.previous, widgetContext));
+//        this.element.find('.portfolio-slider').bind('swipeleft', $.proxy(this.next, widgetContext));
+//        this.element.find('.portfolio-slider').bind('swipeleftup', $.proxy(this.next, widgetContext));
+//        this.element.find('.portfolio-slider').bind('swipeleftdown', $.proxy(this.next, widgetContext));
     }
 });

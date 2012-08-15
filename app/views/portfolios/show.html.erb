@@ -1,6 +1,13 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js" type="text/javascript"
         xmlns="http://www.w3.org/1999/html"></script>
-<%= javascript_include_tag "widgets/jgestures.min" %>
+<script>
+    $(document).bind("mobileinit", function(){
+        $.mobile.ajaxEnabled = false;
+        $.mobile.autoInitializePage = false;
+    });
+</script>
+
+<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
 <%= javascript_include_tag "widgets/portfolio" %>
 <script type="text/javascript">
   $(function(){
