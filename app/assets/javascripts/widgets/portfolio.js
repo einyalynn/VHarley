@@ -13,7 +13,7 @@ $.widget('dlr.portfolio',{
         while (index < images.length){
             this._pageCount++;
             var pageClass = 'page_' + this._pageCount;
-            var pagerElement = $('<span class=' + pageClass + '>' + this._pageCount + '</span>').click(
+            var pagerElement = $('<div class=' + pageClass + '>' + this._pageCount + '</div>').click(
                 function(){
                     widgetContext._setCurrentPage(parseInt($(this).text()));
                     widgetContext._showCurrentPage();
