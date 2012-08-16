@@ -9,10 +9,16 @@ $.widget('dlr.portfolio',{
         var images = this.element.find('div.image');
         var index = 0;
         this._bindEvents();
+        var widgetContext = this;
         while (index < images.length){
             this._pageCount++;
             var pageClass = 'page_' + this._pageCount;
-            this.element.find('.portfolio-pager').append('<span class=' + pageClass + '>' + this._pageCount + '</span>');
+            var pagerElement = $('<span class=' + pageClass + '>' + this._pageCount + '</span>').click(
+                function(){
+                    widgetContext._setCurrentPage(parseInt($(this).text()));
+                    widgetContext._showCurrentPage();
+                });
+            this.element.find('.portfolio-pager').append(pagerElement);
             var pageDiv = $('<div class="portfolio-page"></div>');
             //horizontal indicator is needed as can't get height and width if the images haven't fully loaded
             //and I must assume that the images aren't fully loaded yet!
@@ -38,7 +44,7 @@ $.widget('dlr.portfolio',{
 
     },
     next: function(){
-        this._setCurrentPage(1);
+        this._incrementCurrentPage(1);
         this._showCurrentPage();
 
 //       this._currentImages = newImages;
@@ -53,7 +59,7 @@ $.widget('dlr.portfolio',{
     },
     previous: function(){
 
-        this._setCurrentPage(-1);
+        this._incrementCurrentPage(-1);
         this._showCurrentPage();
 
 //        this._currentImages = newImages.reverse();
@@ -65,9 +71,15 @@ $.widget('dlr.portfolio',{
 //            }
 //        }).delay(200).show('slide', {direction: 'left'}, 1000);
     },
-    _setCurrentPage: function(increment){
+    goToPage: function(pageNumber){
+        this._setCurrentPage(pageNumber);
+        this._showCurrentPage();
+    },
+    _incrementCurrentPage:function(increment){
         var trialNewPage = this._currentPage + increment;
-
+        this._setCurrentPage(trialNewPage);
+    },
+    _setCurrentPage: function(trialNewPage){
         if(trialNewPage < 1){
             this._currentPage = this._pageCount;
         }  else if (trialNewPage > this._pageCount) {
