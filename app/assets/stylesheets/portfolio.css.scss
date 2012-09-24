@@ -4,8 +4,12 @@
 .portfolio-container {
   height: 470px;
   position: absolute;
-  width: 695px;
+  width: 675px;
   overflow: hidden;
+  margin: 0 30px;
+}
+.portfolio-container ul{
+  width: inherit;
 }
 .portfolio-page {
   height: 100%;

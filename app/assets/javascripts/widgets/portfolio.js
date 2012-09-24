@@ -1,11 +1,13 @@
 $.widget('dlr.portfolio',{
     options:{
-
+        width: 690,
+        marginLeftOffset: 25
     },
     _currentPage: null,
     _pageCount: 0,
     _create: function(){
         this._pageCount = this.element.find('li.image').length;
+        this.element.find('.portfolio-container ul').css('width', this._pageCount * this.options.width + this.options.marginLeftOffset);
         var index = 0;
         this._bindEvents();
         var widgetContext = this;
@@ -27,30 +29,11 @@ $.widget('dlr.portfolio',{
     next: function(){
         this._incrementCurrentPage(1);
         this._showCurrentPage();
-
-//       this._currentImages = newImages;
-//       var container = this.element.find("div.portfolio-container");
-//       var availableImages = this._imageList;
-//       container.hide('slide',{direction: 'left'}, 1000, function(){
-//           container.empty();
-//           for(var x=0; x < newImages.length; x++){
-//             container.append(availableImages[newImages[x]]);
-//           }
-//       }).delay(200).show('slide', {direction: 'right'}, 1000);
     },
     previous: function(){
 
         this._incrementCurrentPage(-1);
         this._showCurrentPage();
-
-//        this._currentImages = newImages.reverse();
-//        var container = this.element.find("div.portfolio-container");
-//        container.hide('slide',{direction: 'right'}, 1000, function(){
-//            container.empty();
-//            for(var x=0; x < newImages.length; x++){
-//                container.append(availableImages[newImages[x]]);
-//            }
-//        }).delay(200).show('slide', {direction: 'left'}, 1000);
     },
     goToPage: function(pageNumber){
         this._setCurrentPage(pageNumber);
@@ -71,8 +54,9 @@ $.widget('dlr.portfolio',{
     },
     _showCurrentPage: function(){
         var index =  this._currentPage - 1;
-        this.element.find('li.image:eq(' + index.toString() +')').show();
-        this.element.find('li.image:lt(' + index.toString() +'), li.image:gt(' + index.toString() +')').hide();
+        var margin = -1 * index * this.options.width;
+        //need to animate the shift of the margin of the ul
+        this.element.find('.portfolio-container ul').css('margin-left', margin);
     },
     _bindEvents: function(){
         var widgetContext= this;

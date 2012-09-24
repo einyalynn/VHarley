@@ -8,7 +8,8 @@
 </script>
 <div class="portfolio-slider">
   <div class="portfolio-left"><i class='icon-step-backward'></i></div>
-  <ul class="portfolio-container">
+  <div class="portfolio-container">
+  <ul>
     <% photoCount = 0 %>
 <% @photos.each do |p| %>
         <% if photoCount < 1 %>
@@ -26,6 +27,7 @@
 
 <% end %>
   </ul>
+  </div>
   <div class="portfolio-right"><i class='icon-step-forward'></i></div>
   <div class="portfolio-pager"></div>
 </div>
