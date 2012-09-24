@@ -4,38 +4,19 @@ $.widget('dlr.portfolio',{
     },
     _currentPage: null,
     _pageCount: 0,
-    _pageList: [],
     _create: function(){
-        var images = this.element.find('div.image');
+        this._pageCount = this.element.find('li.image').length;
         var index = 0;
         this._bindEvents();
         var widgetContext = this;
-        while (index < images.length){
-            this._pageCount++;
-            var pageClass = 'page_' + this._pageCount;
-            var pagerElement = $('<div class=' + pageClass + '>' + this._pageCount + '</div>').click(
+        for(var i = 1; i <= this._pageCount; i++){
+            var pageClass = 'page_' + i.toString();
+            var pagerElement = $('<div class=' + pageClass + '>' + i.toString() + '</div>').click(
                 function(){
                     widgetContext._setCurrentPage(parseInt($(this).text()));
                     widgetContext._showCurrentPage();
                 });
             this.element.find('.portfolio-pager').append(pagerElement);
-            var pageDiv = $('<div class="portfolio-page"></div>');
-            //horizontal indicator is needed as can't get height and width if the images haven't fully loaded
-            //and I must assume that the images aren't fully loaded yet!
-            var horizontal = $(images[index]).hasClass('image-horizontal');
-            pageDiv.append(images[index]);
-            if(!horizontal){
-                index++;
-                if(index < images.length && !$(images[index]).hasClass('image-horizontal')){
-                    $(images[index]).addClass('image-right');
-                    pageDiv.append(images[index]);
-                } else
-                {
-                    index--;
-                }
-            }
-            this._pageList[this._pageCount] = pageDiv;
-            index++;
         }
         if(this._pageCount > 0){
             this._currentPage = 1;
@@ -89,10 +70,9 @@ $.widget('dlr.portfolio',{
         }
     },
     _showCurrentPage: function(){
-
-        var container = this.element.find("div.portfolio-container");
-        container.empty();
-        container.append(this._pageList[this._currentPage]);
+        var index =  this._currentPage - 1;
+        this.element.find('li.image:eq(' + index.toString() +')').show();
+        this.element.find('li.image:lt(' + index.toString() +'), li.image:gt(' + index.toString() +')').hide();
     },
     _bindEvents: function(){
         var widgetContext= this;
