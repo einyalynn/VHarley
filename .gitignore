@@ -29,6 +29,7 @@ pkg
 rdoc
 spec/reports
 test/tmp
+test/jstests
 test/version_tmp
 tmp
 
