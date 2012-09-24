@@ -2,17 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .portfolio-container {
-  height: inherit;
+  height: 470px;
   position: absolute;
-  width: inherit;
+  width: 695px;
+  overflow: hidden;
 }
 .portfolio-page {
   height: 100%;
   padding-left: 20px;
   width: 100%;
-}
-.portfolio-slider > .image{
-  display:none;
 }
 .portfolio-slider{
   height: 500px;
@@ -27,8 +25,9 @@
   .image{
     float: left;
     margin: 20px 20px 20px 0;
+    list-style-type: none;
   }
-  .image-right{
+  .image img + img{
     margin-left: 70px;
     margin-right: 0px;
   }

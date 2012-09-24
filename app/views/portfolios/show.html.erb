@@ -8,12 +8,24 @@
 </script>
 <div class="portfolio-slider">
   <div class="portfolio-left"><i class='icon-step-backward'></i></div>
-  <div class="portfolio-container"></div>
+  <ul class="portfolio-container">
+    <% photoCount = 0 %>
 <% @photos.each do |p| %>
-    <div class="image <%= p.horizontal ? 'image-horizontal' : '' %>">
+        <% if photoCount < 1 %>
+            <li class="image <%= p.horizontal ? 'image-horizontal' : '' %> ">
+        <% end
+           photoCount += 1
+        %>
         <%= image_tag p.url, :alt => p.title %>
-    </div>
+        <% if photoCount == 2 || p.horizontal
+                photoCount = 0
+        %>
+            </li>
+        <% else
+           end  %>
+
 <% end %>
+  </ul>
   <div class="portfolio-right"><i class='icon-step-forward'></i></div>
   <div class="portfolio-pager"></div>
 </div>
