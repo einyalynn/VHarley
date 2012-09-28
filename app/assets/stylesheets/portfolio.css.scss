@@ -2,9 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .portfolio-container {
-  height: 470px;
+  height: 645px;
   position: absolute;
-  width: 675px;
+  width: 895px;
   overflow: hidden;
   margin: 0 30px;
 }
@@ -17,8 +17,8 @@
   width: 100%;
 }
 .portfolio-slider{
-  height: 500px;
-  width: 735px;
+  height: 615px;
+  width: 950px;
   margin: auto;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -30,17 +30,48 @@
     float: left;
     margin: 20px 20px 20px 0;
     list-style-type: none;
-  }
-  .image img + img{
-    margin-left: 70px;
-    margin-right: 0px;
+    div{
+       float: left;
+       width: 450px;
+      h4{
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+      h4:first-letter{
+        font-size: 17px;
+      }
+        ul{
+          list-style-type: none;
+          margin:20px 0 0;
+          padding:0;
+          font-size: 13px;
+          li:first-letter{
+            font-size: 16px;
+          }
+          li{
+            line-height: 1.5em;
+           }
+        }
+
+    }
+    img, div{
+      width: 430px;
+    }
+    img + img, div + img{
+       margin-left: 30px;
+       margin-right: 0px;
+     }
   }
   .image-horizontal{
     margin:20px 44px;
+    img{
+      width: auto;
+      height: 550px;
+    }
   }
   .portfolio-pager{
      float:left;
-     padding: 0 20px;
+     padding: 20px;
     a{
       float: left;
       padding: 0 5px;
@@ -49,13 +80,13 @@
     }
    }
   .portfolio-left, .portfolio-right{
-    height: 500px;
+    height: 645px;
     position: relative;
     float: left;
     width: 365px;
     z-index: 1;
     i{
-      margin-top: 200px;
+      margin-top: 300px;
     }
   }
   .portfolio-right, .portfolio-right i{

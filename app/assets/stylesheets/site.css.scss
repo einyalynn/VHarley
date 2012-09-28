@@ -36,18 +36,19 @@ nav{
     list-style-type: none;
     margin:0;
     padding:0;
-    font-size: 12px;
+    font-size: 13px;
     a{
       display: block;
       text-decoration: underline;
+      text-transform: uppercase;
     }
     a:first-letter{
-      font-size: 16px;
+      font-size: 19px;
     }
   }
   li{
     line-height: 3.5em;
-}
+  }
 }
 .makefooterstayatbottom{
   height:377px;
