@@ -12,10 +12,11 @@ $.widget('dlr.portfolio',{
         this._bindEvents();
         var widgetContext = this;
         for(var i = 1; i <= this._pageCount; i++){
-            //var pageClass = 'page_' + i.toString();
-            var pagerElement = $('<div>' + i.toString() + '</div>').click(
+            var pageLink = '<a href="#" title="page ' + i.toString() +'">' + i.toString() + '</a>';
+            var pagerElement = $(pageLink).click(
                 function(){
                     widgetContext.goToPage(parseInt($(this).text()));
+                    return false;
                 });
             this.element.find('.portfolio-pager').append(pagerElement);
         }
@@ -28,11 +29,13 @@ $.widget('dlr.portfolio',{
     next: function(){
         this._incrementCurrentPage(1);
         this._showCurrentPage(1000);
+        return false;
     },
     previous: function(){
 
         this._incrementCurrentPage(-1);
         this._showCurrentPage(1000);
+        return false;
     },
     goToPage: function(pageNumber){
         var easingDuration = Math.pow(this._currentPage - pageNumber, 2) === 1 ? 1000 : 2000;
