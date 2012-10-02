@@ -1,7 +1,7 @@
 class Photo < ActiveRecord::Base
   before_destroy :before_destroy
-  attr_accessible :description, :sequence, :title, :url, :visible, :picture, :horizontal, :portfolio
-def before_destroy
+  attr_accessible :description, :sequence, :title, :url, :picture, :visible, :horizontal, :portfolio
+  def before_destroy
   options = {:account_name => ENV['AZURE_ACCOUNT_NAME'],
              :access_key => ENV['AZURE_ACCOUNT_PRIMARY_ACCESS_KEY']}
   WAZ::Storage::Base.establish_connection(options) do

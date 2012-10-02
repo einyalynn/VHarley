@@ -1,6 +1,9 @@
 require "waz-blobs"
+require 'uri'
+require 'photoModel'
 
 module Admin
+
    class PhotosController < ApplicationController
      before_filter :doAdminAuthentication
      private
@@ -19,7 +22,8 @@ module Admin
        @photo = Photo.find params[:id]
      end
      def edit
-       @photo = Photo.find params[:id]
+       @photoModel = PhotoModel.new
+       @photoModel.photo = Photo.find params[:id]
      end
      def new
         @photo = Photo.new
@@ -50,6 +54,19 @@ module Admin
      end
      def update
        @photo = Photo.find(params[:id])
+       if !params[:photoModel].nil? && !params[:photoModel][:picture].nil?
+         uploaded_io = params[:photoModel][:picture]
+         if !uploaded_io.nil?
+           uriPath = URI(@photo.url).path
+           imageFileName = File.basename(uriPath)
+           options = {:account_name => ENV['AZURE_ACCOUNT_NAME'],
+                      :access_key => ENV['AZURE_ACCOUNT_PRIMARY_ACCESS_KEY']}
+           WAZ::Storage::Base.establish_connection(options) do
+             my_container = WAZ::Blobs::Container.find('split-pin')
+             new_photo_blob = my_container.store(imageFileName, uploaded_io.read, uploaded_io.content_type)
+           end
+         end
+       end
        if @photo.update_attributes(params[:photo])
          redirect_to :action => :index
        else

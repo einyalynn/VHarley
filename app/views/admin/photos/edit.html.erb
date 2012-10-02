@@ -2,7 +2,7 @@
 <p><%= link_to "Back to List", admin_photos_path %>  </p>
 <br />
 
-<%= form_for [:admin, @photo] do |f| %>
+<%= form_for [:admin, @photoModel.photo], :html => { :enctype => "multipart/form-data"} do |f| %>
 
     <%= label_tag(:title, "Short title:") %>
     <%= f.text_field :title, 'required' => '' %>
@@ -16,8 +16,11 @@
     <%= f.check_box :horizontal %>
     <%= label_tag(:url, "Photo Location:") %>
     <%= f.text_field :url %>
+        <%= label_tag('picture', "Replace image:") %>
+    <input id="photoModel_picture" type="file" name="photoModel[picture]">
+
     <br />
     <%= submit_tag("Update") %>
 <% end %>
 
-<%= image_tag @photo.url, :alt => @photo.title %>
+<%= image_tag @photoModel.photo.url, :alt => @photoModel.photo.title %>
