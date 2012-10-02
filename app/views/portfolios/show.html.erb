@@ -27,8 +27,8 @@
             <li class="image <%= p.horizontal ? 'image-horizontal' : '' %> ">
         <% end
            photoCount += 1
-        %>
-        <%= image_tag p.url, :alt => p.title %>
+        %>     <div>
+        <%= image_tag p.url, :alt => p.title %>       </div>
         <% if photoCount == 2 || p.horizontal
                 photoCount = 0
         %>
@@ -40,5 +40,6 @@
   </ul>
   </div>
   <div class="portfolio-right"><a title="next" href="#"><i class='icon-step-forward'></i></a></div>
+  <div style="clear:both"></div>
   <div class="portfolio-pager"></div>
 </div>
