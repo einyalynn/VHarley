@@ -63,10 +63,9 @@
      }
   }
   .image-horizontal{
-    margin:20px 44px;
     img{
-      width: auto;
-      height: 550px;
+      width: 895px;
+      height: auto;
     }
   }
   .portfolio-pager{
@@ -85,9 +84,7 @@
     float: left;
     width: 365px;
     z-index: 1;
-    i{
-      margin-top: 300px;
-    }
+    padding-top: 30%;
   }
   .portfolio-right, .portfolio-right i{
     float: right;
