@@ -1,0 +1,2 @@
+module Admin::PhotosApiHelper
+end
