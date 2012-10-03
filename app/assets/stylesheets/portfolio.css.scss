@@ -95,8 +95,6 @@
 
 .portfolio-link{
   position: relative;
-  min-width: 250px;
-  height: 683px;
   margin-bottom: 20px;
   img{
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
@@ -105,13 +103,11 @@
     left: 0;
     position: relative;
     top: -18px;
-    width: 250px;
-    height: 683px;
     margin-bottom: auto;
   }
   a{
     position: relative;
-    width: 250px;
+    width: 100%;
     text-align: center;
     text-transform: uppercase;
     display: block;
