@@ -16,7 +16,7 @@ body, html{
 .interiorContainerControlsWidth{
   margin: auto;
   padding: 0 15px;
-  max-width: 1240px;
+  min-width: 1165px
 }
 header{
   padding-top: 30px;
@@ -63,6 +63,12 @@ nav{
   clear: both;
 }
 
+.side{
+  width: 120px;
+}
+.central{ min-width: 1042px; margin-left: 120px;}
+.inner{ display: table;
+  margin: 0 auto; }
 @media screen and (max-width: 500px) {
   nav{
     position: absolute;
@@ -90,7 +96,6 @@ nav{
       height:auto;
     }
   }
-
 }
 @media screen and (min-width: 501px) and (max-width: 1340px) {
   .interiorContainerControlsWidth{
@@ -100,7 +105,6 @@ nav{
 }
 @media screen and (min-width: 1341px) {
   .interiorContainerControlsWidth{
-    width: 90%;
     max-width: 1600px;
     box-sizing:border-box;
     -moz-box-sizing:border-box;

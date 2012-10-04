@@ -16,11 +16,12 @@
 <div class="necessarycontainertomakefullheight">
   <div class="interiorContainerControlsWidth">
     <%= render 'shared/header' %>
-    <div class="row-fluid">
-      <div class="span2">
+
+      <div class="side">
         <%= render 'shared/menu' %>
       </div>
-      <div class="span10">
+    <div class="central">
+      <div class="inner">
         <%= yield %>
       </div>
     </div>
