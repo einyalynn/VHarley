@@ -66,5 +66,21 @@ $.widget('dlr.portfolio',{
         var widgetContext= this;
         this.element.find('.portfolio-left').click($.proxy(this.previous, widgetContext));
         this.element.find('.portfolio-right').click($.proxy(this.next, widgetContext));
+        //find left
+        this.element.find('.image:not(.image-horizontal) div:first-child').click($.proxy(this.previous, widgetContext));
+        //find right
+        this.element.find('.image:not(.image-horizontal) div:nth-child(2)').click($.proxy(this.next, widgetContext));
+        //find horizontal
+        this.element.find('.image-horizontal div:first-child').click(
+            function(e){
+                var x = e.pageX - $(this).offset().left;
+                var midPoint = $(this).outerWidth() / 2;
+                if(x > midPoint){
+                    $.proxy(widgetContext.next(), widgetContext);
+                } else{
+                    $.proxy(widgetContext.previous(), widgetContext);
+                }
+            }
+        )
     }
 });
