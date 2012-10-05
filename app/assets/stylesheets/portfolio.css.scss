@@ -69,16 +69,7 @@
       height: auto;
     }
   }
-  .portfolio-pager{
-     float:left;
-     padding: 20px;
-    a{
-      float: left;
-      padding: 0 5px;
-      margin: 0 2px;
-      cursor: pointer;
-    }
-   }
+
   .portfolio-left, .portfolio-right{
     height: 645px;
     position: relative;
@@ -96,7 +87,17 @@
   min-width: 30px;
 
 }
-
+.portfolio-pager{
+  margin: auto;
+  padding: 20px;
+  width: 910px;
+  a{
+    float: left;
+    padding: 0 5px;
+    margin: 0 2px;
+    cursor: pointer;
+  }
+}
 .central .row-fluid [class*="span"]{
   float: left;
 }

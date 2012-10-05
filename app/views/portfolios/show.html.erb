@@ -4,9 +4,10 @@
 <%= javascript_include_tag "widgets/jquery.easing.1.3" %>
 <script type="text/javascript">
   $(function(){
-     $('.portfolio-slider').portfolio({width:913});
+     $('.portfolio').portfolio({width:913});
   })
 </script>
+<div class="portfolio">
 <div class="portfolio-slider">
   <div class="portfolio-left"><a title="previous" href="#"><i class='icon-step-backward'></i></a></div>
   <div class="portfolio-container">
@@ -41,5 +42,6 @@
   </div>
   <div class="portfolio-right"><a title="next" href="#"><i class='icon-step-forward'></i></a></div>
   <div style="clear:both"></div>
-  <div class="portfolio-pager"></div>
+</div>
+<div class="portfolio-pager"></div>
 </div>
