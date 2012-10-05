@@ -74,7 +74,7 @@ $.widget('dlr.portfolio',{
         this.element.find('.image-horizontal div:first-child').click(
             function(e){
                 var x = e.pageX - $(this).offset().left;
-                var midPoint = $(this).outerWidth() / 2;
+                var midPoint = $(this).innerWidth() / 2;
                 if(x > midPoint){
                     $.proxy(widgetContext.next(), widgetContext);
                 } else{
