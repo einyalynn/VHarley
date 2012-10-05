@@ -3,9 +3,6 @@ $linkColor: #404040;
 $sansFontFamily: MuseoSlab500Regular;
 @import "bootstrap";
 @import "bootstrap-responsive";
-* {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
 
 body, html{
   padding: 0;
