@@ -92,9 +92,23 @@
     float: right;
   }
 }
-.portfolio-link + div{
+.spacer{
 
-  margin-left: 70px;
+  min-width: 30px;
+
+}
+
+.central .row-fluid [class*="span"]{
+  float: left;
+}
+
+@media screen and (max-width: 500px) {
+  .central .row-fluid [class*="span"]{
+    float: none;
+  }
+  header .central .row-fluid [class*="span"]{
+    float: left;
+  }
 
 }
 .portfolio-link{
@@ -102,7 +116,6 @@
   min-width: 250px;
   height: 683px;
   margin-bottom: 20px;
-  display: inline-block;
   img{
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
     filter: alpha(opacity=65);
