@@ -34,19 +34,23 @@
     div{
        display: inline-block;
 
+      .portfolio-text{
+        width: 430px;
+      }
       h4{
         text-transform: uppercase;
         font-size: 12px;
-        width: 430px;
+        width: 80%;
+        margin: auto;
       }
       h4:first-letter{
         font-size: 17px;
       }
         ul{
           list-style-type: none;
-          margin:20px 0 0;
-          padding:0;
+          margin:20px auto 0;
           font-size: 13px;
+          width: 80%;
           li:first-letter{
             font-size: 16px;
           }
