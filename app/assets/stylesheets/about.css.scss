@@ -1,0 +1,34 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.focus-image{
+  width: auto;
+  margin-right: 50px;
+}
+.text-column{
+  text-align: justify;
+  width: 230px;
+  float: left;
+}
+.text-column + .text-column{
+  margin-left: 35px;
+}
+.featured-area{
+  margin: 15px auto;
+  width: 1010px;
+  overflow: hidden;
+}
+@media screen and (max-width: 600px) {
+  .featured-area{
+    overflow: visible;
+  }
+  .text-column{
+    float: none;
+    width: 455px;
+  }
+  .text-column + .text-column{
+    margin-left: 0px;
+  }
+}
+
