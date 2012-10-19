@@ -1,10 +1,14 @@
 // Place all the styles related to the portfolio controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$portfolio-height: 470px;
+$portfolio-vertical-width: 300px;
+$portfolio-slider-width: 763px;
+
 .portfolio-container {
-  height: 645px;
+  height: $portfolio-height;
   position: absolute;
-  width: 895px;
+  width: 720px;
   overflow: hidden;
   margin: 0 30px;
 }
@@ -18,7 +22,7 @@
   width: 100%;
 }
 .portfolio-slider{
-  width: 950px;
+  width: $portfolio-slider-width;
   margin: auto;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -33,9 +37,9 @@
     list-style-type: none;
     div{
        display: inline-block;
-
+      float: left;
       .portfolio-text{
-        width: 430px;
+        width: $portfolio-vertical-width;
       }
       h4{
         text-transform: uppercase;
@@ -61,22 +65,22 @@
 
     }
     img{
-      width: 430px;
+      width: $portfolio-vertical-width;
     }
     div + div{
-       margin-left: 30px;
+       margin-left: 100px;
        margin-right: 0px;
      }
   }
   .image-horizontal{
     img{
-      width: 895px;
+      width: 705px;
       height: auto;
     }
   }
 
   .portfolio-left, .portfolio-right{
-    height: 645px;
+    height: $portfolio-height;
     position: relative;
     float: left;
     width: 25px;
@@ -95,7 +99,7 @@
 .portfolio-pager{
   margin: auto;
   padding: 20px;
-  width: 910px;
+  width: $portfolio-slider-width - 10;
   a{
     float: left;
     padding: 0 5px;
