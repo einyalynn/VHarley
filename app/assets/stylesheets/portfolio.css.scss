@@ -3,12 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $portfolio-height: 470px;
 $portfolio-vertical-width: 300px;
-$portfolio-slider-width: 763px;
+$portfolio-slider-width: 708px;
+
+.portfolio-links{
+  width: 905px;
+  margin: auto;
+  overflow: hidden;
+}
 
 .portfolio-container {
   height: $portfolio-height;
   position: absolute;
-  width: 720px;
+  width: $portfolio-slider-width - 43;
   overflow: hidden;
   margin: 0 30px;
 }
@@ -68,13 +74,14 @@ $portfolio-slider-width: 763px;
       width: $portfolio-vertical-width;
     }
     div + div{
-       margin-left: 100px;
+       margin-left: 45px;
        margin-right: 0px;
      }
   }
   .image-horizontal{
     img{
-      width: 705px;
+      width: 600px;
+      margin: 0 23px;
       height: auto;
     }
   }
@@ -123,6 +130,14 @@ $portfolio-slider-width: 763px;
   }
   header .central .row-fluid [class*="span"]{
     float: left;
+  }
+
+}
+
+@media screen and (max-width: 1024px) {
+  .central .portfolio-links div.span1{
+    width: 30px;
+    margin:0;
   }
 
 }
