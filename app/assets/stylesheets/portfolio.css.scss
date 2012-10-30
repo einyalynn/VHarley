@@ -142,7 +142,11 @@ $portfolio-slider-width: 708px;
     width: 30px;
     margin:0;
   }
-
+}
+@media screen and (max-height: 725px){
+  .portfolio-links{
+    height: 500px;
+  }
 }
 .portfolio-link{
   position: relative;
