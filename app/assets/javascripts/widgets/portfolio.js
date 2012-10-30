@@ -2,11 +2,13 @@
 $.widget('dlr.portfolio',{
     options:{
         width: 690,
-        marginLeftOffset: 25
+        marginLeftOffset: 25,
+        useShortcutKeys: true
     },
     _currentPage: null,
     _pageCount: 0,
     _create: function(){
+        var self= this;
         this._pageCount = this.element.find('li.image').length;
         this.element.find('.portfolio-container > ul').css('width', this._pageCount * this.options.width + this.options.marginLeftOffset);
         this._bindEvents();
@@ -24,7 +26,16 @@ $.widget('dlr.portfolio',{
             this._currentPage = 1;
             this._showCurrentPage(0);
         }
-
+        if(this.options.useShortcutKeys){
+            $(document).keyup(function(e){
+                if(e.which === 39)
+                {
+                    self.next();
+                } else if(e.which === 37){
+                    self.previous();
+                }
+            });
+        }
     },
     next: function(){
         this._incrementCurrentPage(1);
@@ -61,6 +72,8 @@ $.widget('dlr.portfolio',{
         this.element.find('.portfolio-container > ul').animate({
             marginLeft: [margin, 'easeInOutCubic']
         }, duration, undefined);
+        this.element.find('a.selected').removeClass('selected');
+        this.element.find('a[title="page ' + this._currentPage + '"]').addClass('selected');
     },
     _bindEvents: function(){
         var widgetContext= this;
