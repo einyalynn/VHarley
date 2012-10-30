@@ -7,7 +7,7 @@
     <%= label_tag(:title, "Short title:") %>
     <%= f.text_field :title, 'required' => '' %>
     <%= label_tag(:portfolio, "Portfolio:") %>
-    <%= f.select :portfolio, %w[food interiors features] %>
+    <%= f.select :portfolio, %w[food interiors published] %>
     <%= label_tag(:sequence, "Order of the image on the page:") %>
     <%= f.number_field :sequence, {:min=> 0, :step => 1} %>
     <%= label_tag(:visible, "Should the image be shown:") %>

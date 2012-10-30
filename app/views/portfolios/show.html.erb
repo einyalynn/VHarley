@@ -14,7 +14,7 @@
   <ul>
     <% photoCount = 0
        pfId = params[:id]
-       if pfId.respond_to?('downcase') && pfId.downcase == 'featured' %>
+       if pfId.respond_to?('downcase') && pfId.downcase == 'published' %>
         <li class="image">
           <div>
         <%= render 'shared/clientlist' %>      </div>
