@@ -1,16 +1,32 @@
 <p><%= link_to "Back to List", admin_photos_path %>  </p>
 <br/>
 <p>All available images</p>
-<ul>
-  <% @photos.each do |p| %>
-      <li> <% if p.visible %>
-            <strong>
-        <% end %>
-        <%= link_to p.title + ": " + p.portfolio, admin_photo_path(p) %>
-        <% if p.visible %>
-            </strong>
-        <% end %>
-      </li>
-  <% end %>
-</ul>
+<%= javascript_include_tag "widgets/adminphoto" %>
+
 <p><%= link_to 'upload new image', new_admin_photo_path %> </p>
+<table>
+  <thead>
+    <tr>
+      <th>Section</th>
+      <th>Order</th>
+      <th>Image Name</th>
+      <th>Link</th>
+      <th>Visible</th>
+      <th>Horizontal</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody data-bind="foreach: photos">
+    <tr>
+      <td><p data-bind="text:section, visible: !editMode()"></p></td>
+      <td><p data-bind="text:sequence, visible: !editMode()"></p></td>
+      <td><p data-bind="text:title, visible: !editMode()"></p></td>
+      <td><p data-bind="text:url, visible: !editMode()"></p></td>
+      <td><p data-bind="text:visible, visible: !editMode()"></p></td>
+      <td><p data-bind="text:horizontal, visible: !editMode()"></p></td>
+      <td><button data-bind="text:editMode()? 'Cancel' : 'Edit', click: setEdit"></button>
+        <p><a data-bind="attr: {href: '/admin/photos/' + id() + '/edit'}">edit photo</a></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
