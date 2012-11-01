@@ -3,17 +3,17 @@ dlr.admin = dlr.admin || {};
 dlr.admin.photos = {};
 
 $(function() {
-    ko.applyBindings(new PhotosViewModel());
+    ko.applyBindings(new dlr.admin.photos.PhotosViewModel());
 });
 
-var PhotosViewModel = function(){
+dlr.admin.photos.PhotosViewModel = function(){
     var self = this;
     self.photos = ko.observableArray([]);
     self.getPhotos = function(){
       var update = [];
         dlr.utils.ajaxHelper("get","/admin/photos_api", undefined,function(data){
             for(var x = 0; x < data.length; x++){
-                update.push(new Photo()
+                update.push(new dlr.admin.photos.Photo()
                     .id(data[x].id)
                     .title(data[x].title)
                     .url(data[x].url)
@@ -29,7 +29,7 @@ var PhotosViewModel = function(){
     self.getPhotos();
 };
 
-var Photo = function(){
+dlr.admin.photos.Photo = function(){
     var self = this;
     self.id = ko.observable();
     self.title = ko.observable();
