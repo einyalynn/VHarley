@@ -15,5 +15,21 @@ module Admin
       @photos = Photo.all :order => [:portfolio, :sequence]
       render :json => @photos
     end
+    def update
+      @photo = Photo.find(params[:id])
+      @photo.url = params["url"]
+      @photo.title = params["title"]
+      @photo.portfolio = params["section"]
+      @photo.sequence = params["sequence"]
+      @photo.visible = ActiveRecord::ConnectionAdapters::Column.value_to_boolean(params["visible"])
+      @photo.horizontal = ActiveRecord::ConnectionAdapters::Column.value_to_boolean(params["horizontal"])
+
+      if @photo.save
+        render :json => (success = true)
+      else
+        render :json => (success = false)
+      end
+    end
+
   end
 end

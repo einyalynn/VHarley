@@ -1,3 +1,35 @@
 // Place all the styles related to the Admin controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+table{
+  .photo-title{
+    width: 170px;
+    input, p{
+      width: 150px;
+    }
+  }
+  .photo-section{
+    width: 120px;
+    select, p{
+      width: 100px;
+    }
+  }
+  .photo-sequence{
+    width: 70px;
+    input, p{
+      width: 50px;
+    }
+  }
+  .photo-url{
+    width: 270px;
+    input, p{
+      width: 250px;
+    }
+  }
+  .photo-visible, .photo-horizontal{
+    width: 70px;
+    select, p{
+      width: 50px;
+    }
+  }
+}
