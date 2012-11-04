@@ -1,11 +1,15 @@
 Victoria::Application.routes.draw do
-  devise_for :users
-
+  devise_for :users, :skip => [:registrations]
+  as :user do
+    get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
+    put 'users' => 'devise/registrations#update', :as => 'user_registration'
+  end
 resources :portfolio, :controller => :portfolios, :only => [:index, :show], :as => :portfolios
 match 'about' => 'about#index', :as => :about
 match 'contact' => 'about#contact', :as => :contact
 match 'biography' => 'about#index'
 match 'bio' => 'about#index'
+
 resources :admin, :only => :index
 
  namespace :admin do
@@ -18,6 +22,7 @@ resources :admin, :only => :index
      end
    end
  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
