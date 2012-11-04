@@ -74,8 +74,8 @@ Victoria::Application.configure do
       :port                 => 587,
       :domain               => ENV['GMAIL_SMTP_USER'],
       :user_name            => ENV['GMAIL_SMTP_USER'],
-      :password             => ENV['GMAIL_SMTP_USER'],
-      :authentication       => 'plain',
+      :password             => ENV['GMAIL_SMTP_PASSWORD'],
+      :authentication       => :plain,
       :enable_starttls_auto => true
   }
 end
