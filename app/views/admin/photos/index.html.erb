@@ -42,10 +42,12 @@
         <select data-bind="options: $root.checks, optionsText: 'text', optionsValue: 'value', value: savePhoto().horizontal, visible: editMode()"></select>
       </td>
       <td class="photo-buttons">
-        <button data-bind="text:editMode()? 'Cancel' : 'Edit', click: setEdit, enable: !isSaving()"></button>
-        <button data-bind="text:'Save', click: save, visible: editMode(), enable: !isSaving()"></button>
+        <button class="btn" data-bind="css:{'btn-inverse': !editMode(), 'btn-warning': editMode()}, text:editMode()? 'Cancel' : 'Edit', click: setEdit, enable: !isSaving()"></button>
+        <button class="btn btn-success" data-bind="text:'Save', click: save, visible: editMode(), enable: !isSaving()"></button>
+
         <p><a data-bind="attr: {href: '/admin/photos/' + id() + '/edit'}">edit photo</a></p>
       </td>
     </tr>
   </tbody>
 </table>
+<p class="text-info" data-bind="visible: isLoading()">Loading, be right with you.</p>

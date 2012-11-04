@@ -11,8 +11,9 @@ dlr.admin.photos.PhotosViewModel = function(){
     self.photos = ko.observableArray([]);
     self.portfolios = ["food","interiors","published"];
     self.checks = [{text:"no", value:"false"},{text:"yes", value:"true"}];
-
+    self.isLoading = ko.observable(false);
     self.getPhotos = function(){
+      self.isLoading(true);
       var update = [];
         dlr.utils.ajaxHelper("get","/admin/photos_api", undefined,function(data){
             for(var x = 0; x < data.length; x++){
@@ -27,6 +28,8 @@ dlr.admin.photos.PhotosViewModel = function(){
                 );
             }
             self.photos(update);
+        }, null, function(){
+            self.isLoading(false);
         } )
     };
     self.getPhotos();
