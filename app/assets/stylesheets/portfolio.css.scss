@@ -17,32 +17,21 @@ $portfolio-slider-width: 708px;
   width: $portfolio-slider-width - 43;
   overflow: hidden;
   margin: 0 30px;
-}
-.portfolio-container ul{
-  width: inherit;
-  height: 100%;
-}
-.portfolio-page {
-  height: 100%;
-  padding-left: 20px;
-  width: 100%;
-}
-.portfolio-slider{
-  width: $portfolio-slider-width;
-  margin: auto;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  div{
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-  }
-  .image{
+  > ul{
+    > li{
     float: left;
     margin: 20px 20px 20px 0;
     list-style-type: none;
+
+    &.image-horizontal{
+        img{
+          width: 600px;
+          margin: 0 23px;
+          height: auto;
+        }
+      }
     div{
-       display: inline-block;
+      display: inline-block;
       float: left;
       .portfolio-text{
         width: $portfolio-vertical-width;
@@ -56,35 +45,50 @@ $portfolio-slider-width: 708px;
       h4:first-letter{
         font-size: 17px;
       }
-        ul{
-          list-style-type: none;
-          margin:20px auto 0;
-          font-size: 13px;
-          width: 80%;
-          li:first-letter{
-            font-size: 16px;
-          }
-          li{
-            line-height: 1.5em;
-           }
+      ul{
+        list-style-type: none;
+        margin:20px auto 0;
+        font-size: 13px;
+        width: 80%;
+        li:first-letter{
+          font-size: 16px;
         }
+        li{
+          line-height: 1.5em;
+        }
+      }
 
     }
     img{
       width: $portfolio-vertical-width;
     }
     div + div{
-       margin-left: 45px;
-       margin-right: 0px;
-     }
-  }
-  .image-horizontal{
-    img{
-      width: 600px;
-      margin: 0 23px;
-      height: auto;
+      margin-left: 45px;
+      margin-right: 0px;
     }
   }
+
+  }
+}
+.portfolio-container ul{
+}
+.portfolio-page {
+  height: 100%;
+  padding-left: 20px;
+  width: 100%;
+}
+.portfolio-slider{
+  width: $portfolio-slider-width;
+  margin: auto;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  overflow: hidden;
+  div{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+
 
   .portfolio-left, .portfolio-right{
     height: $portfolio-height;

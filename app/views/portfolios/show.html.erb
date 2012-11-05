@@ -15,7 +15,7 @@
     <% photoCount = 0
        pfId = params[:id]
        if pfId.respond_to?('downcase') && pfId.downcase == 'published' %>
-        <li class="image">
+        <li>
           <div>
         <%= render 'shared/clientlist' %>      </div>
           <% #image_tag 'article.jpg' %>
@@ -25,7 +25,7 @@
 
 <% @photos.each do |p| %>
         <% if photoCount < 1 %>
-            <li class="image <%= p.horizontal ? 'image-horizontal' : '' %> ">
+            <li<%= p.horizontal ? ' class="image-horizontal"' : '' %>>
         <% end
            photoCount += 1
         %>     <div>
@@ -41,7 +41,6 @@
   </ul>
   </div>
   <div class="portfolio-right"><a title="next" href="#"><i class='icon-step-forward'></i></a></div>
-  <div style="clear:both"></div>
 </div>
 <div class="portfolio-pager"></div>
 </div>

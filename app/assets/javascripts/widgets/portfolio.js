@@ -9,7 +9,7 @@ $.widget('dlr.portfolio',{
     _pageCount: 0,
     _create: function(){
         var self= this;
-        this._pageCount = this.element.find('li.image').length;
+        this._pageCount = this.element.find('.portfolio-container > ul > li').length;
         this.element.find('.portfolio-container > ul').css('width', this._pageCount * this.options.width + this.options.marginLeftOffset);
         this._bindEvents();
         var widgetContext = this;
@@ -80,9 +80,9 @@ $.widget('dlr.portfolio',{
         this.element.find('.portfolio-left').click($.proxy(this.previous, widgetContext));
         this.element.find('.portfolio-right').click($.proxy(this.next, widgetContext));
         //find left
-        this.element.find('.image:not(.image-horizontal) div:first-child').click($.proxy(this.previous, widgetContext));
+        this.element.find('.portfolio-container > ul > li:not(.image-horizontal) div:first-child').click($.proxy(this.previous, widgetContext));
         //find right
-        this.element.find('.image:not(.image-horizontal) div:nth-child(2)').click($.proxy(this.next, widgetContext));
+        this.element.find('.portfolio-container > ul > li:not(.image-horizontal) div:nth-child(2)').click($.proxy(this.next, widgetContext));
         //find horizontal
         this.element.find('.image-horizontal div:first-child').click(
             function(e){
