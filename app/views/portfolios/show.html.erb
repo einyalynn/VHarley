@@ -25,7 +25,7 @@
 
 <% @photos.each do |p| %>
         <% if photoCount < 1 %>
-            <li<%= p.horizontal ? ' class="image-horizontal"' : '' %>>
+            <li class="<%= p.horizontal ? 'image-horizontal' : '' %>">
         <% end
            photoCount += 1
         %>     <div>
