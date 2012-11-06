@@ -3,9 +3,10 @@
 <head>
   <title>Victoria Harley Photography</title>
 
-
   <%= stylesheet_link_tag    "application", :media => "all" %>
-
+  <!--[if ie 7]>
+  <%= stylesheet_link_tag "ie/ie7", :media => "all" %>
+  <![endif]-->
   <!--[if lt ie 9]>
   <%= javascript_include_tag "ltie9/html5shiv" %>
   <![endif]-->
