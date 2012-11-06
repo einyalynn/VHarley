@@ -58,6 +58,7 @@ module Victoria
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.assets.paths << Rails.root.join("app", "assets", "javascripts", "ltie9")
     config.assets.paths << Rails.root.join("app", "assets", "javascripts", "widgets")
+    config.assets.paths << Rails.root.join("app", "assets", "stylesheets", "ie")
 
 
     # Version of your assets, change this if you want to expire all your assets
