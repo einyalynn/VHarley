@@ -2,6 +2,6 @@ $portfolio-height: 470px;
 .portfolio-container {
   margin-left: 0;
 }
-.portfolio-left, .portfolio-right{
+.portfolio-slider .portfolio-left, .portfolio-slider .portfolio-right{
   height: $portfolio-height * 70 / 100;
 }
