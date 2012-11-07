@@ -1,3 +1,7 @@
+$portfolio-height: 470px;
 .portfolio-container {
   margin-left: 0;
+}
+.portfolio-left, .portfolio-right{
+  height: $portfolio-height * 100 / 70;
 }
