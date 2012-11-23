@@ -5,7 +5,7 @@ class Photo < ActiveRecord::Base
   options = {:account_name => ENV['AZURE_ACCOUNT_NAME'],
              :access_key => ENV['AZURE_ACCOUNT_PRIMARY_ACCESS_KEY']}
   WAZ::Storage::Base.establish_connection(options) do
-    my_container = WAZ::Blobs::Container.find('split-pin')
+    my_container = WAZ::Blobs::Container.find(ENV['AZURE_CONTAINER'])
 
     filename = PortfolioHelper::Utilities.new.getFileName(self.url)
     photoAzure = my_container[filename]
