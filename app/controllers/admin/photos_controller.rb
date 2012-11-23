@@ -32,7 +32,10 @@ module Admin
        options = {:account_name => ENV['AZURE_ACCOUNT_NAME'],
                   :access_key => ENV['AZURE_ACCOUNT_PRIMARY_ACCESS_KEY']}
        WAZ::Storage::Base.establish_connection(options) do
-         my_container = WAZ::Blobs::Container.find('split-pin')
+         my_container = WAZ::Blobs::Container.find(ENV['AZURE_CONTAINER'])
+         if my_container.nil?
+           my_container = WAZ::Blobs::Container.create(ENV['AZURE_CONTAINER'])
+         end
          new_photo_blob = my_container.store(uploaded_io.original_filename, uploaded_io.read, uploaded_io.content_type)
          if !new_photo_blob.nil? && !new_photo_blob.url.blank?
            new_photo = Photo.new(title:params[:photo][:title],
