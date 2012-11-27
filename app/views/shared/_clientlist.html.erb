@@ -1,19 +1,16 @@
 <div class="portfolio-text">
 <h4>Clients include:</h4>
-<ul>
-  <li>Merrell Publishing</li>
-  <li>Jacqui Small Publishing</li>
-  <li>Absolutely Food PR</li>
-  <li>Huts and Hideaways</li>
-  <li>Tesco Real Food Magazine</li>
-  <li>Vicky Grant Smith Interiors</li>
-  <li>Dumouchel Patisserie</li>
-  <li>Yorkshire Life</li>
-  <li>Copperwheat Agriculture</li>
-  <li>Channel 4 Food</li>
-  <li>TeaHee Espresso Bar</li>
-  <li>Quad Speakers</li>
-  <li>Jamsmith</li>
-  <li>Sutton Beef and Lamb</li>
-</ul>
+
+  <ul>
+    <% (0..18).each do |x|
+    unless (clients[x].blank?)
+    %>
+
+                  <li>
+                    <%= clients[x] %>
+                  </li>
+        <% end
+           end %>
+
+        </ul>
     </div>

@@ -17,7 +17,8 @@
        if pfId.respond_to?('downcase') && pfId.downcase == 'published' %>
         <li>
           <div>
-        <%= render 'shared/clientlist' %>      </div>
+
+            <%= render "shared/clientlist", :clients => @clients %>      </div>
           <% #image_tag 'article.jpg' %>
 
     <%  photoCount = 1
