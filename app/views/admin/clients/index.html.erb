@@ -1,0 +1,38 @@
+<p><%= link_to "Back to List", admin_clients_path %>  </p>
+<br/>
+<%= javascript_include_tag "widgets/adminclient" %>
+
+<p><%= link_to 'add new client', new_admin_client_path %> </p>
+<table  class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Order</th>
+      <th>Link</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody data-bind="foreach: clients">
+    <tr>
+      <td class="client-section">
+        <p data-bind="text:name, visible: !editMode()"></p>
+        <input type="number" data-bind="value: saveClient().name, visible: editMode()" />
+      </td>
+      <td class="client-sequence">
+        <p data-bind="text:sequence, visible: !editMode()"></p>
+        <input type="number" data-bind="value: saveClient().sequence, visible: editMode()" />
+      </td>
+      <td class="client-url">
+        <p data-bind="text:url, visible: !editMode()"></p>
+        <input type="text" data-bind="value: saveClient().url, visible: editMode()" />
+      </td>
+      
+      <td class="client-buttons">
+        <button class="btn" data-bind="css:{'btn-inverse': !editMode(), 'btn-warning': editMode()}, text:editMode()? 'Cancel' : 'Edit', click: setEdit, enable: !isSaving()"></button>
+        <button class="btn btn-success" data-bind="text:'Save', click: save, visible: editMode(), enable: !isSaving()"></button>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="text-info" data-bind="visible: isLoading()">Loading, be right with you.</p>

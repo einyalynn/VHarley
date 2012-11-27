@@ -21,6 +21,12 @@ resources :admin, :only => :index
        put 'update'
      end
    end
+   resources :clients
+   resources :clients_api do
+     collection do
+       put 'update'
+     end
+   end
  end
 
   # The priority is based upon order of creation:

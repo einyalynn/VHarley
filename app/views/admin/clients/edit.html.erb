@@ -1,0 +1,30 @@
+<div class="row-fluid">
+  <div class="span12">
+    <div class="featured-area">
+<p><%= link_to "Back to List", admin_clients_path %>  </p>
+<br />
+
+<%= form_for [:admin, @client] do |f| %>
+
+
+    <%= label_tag(:name, "Client name:") %>
+    <%= f.text_field :name, 'required' => '' %>
+    <br />
+
+      <%= label_tag(:url, "Client url:") %>
+      <%= f.text_field :url %>
+      <br />
+
+      <%= label_tag(:sequence, "Sequence:") %>
+      <%= f.number_field :sequence %>
+      <br />
+    <%= submit_tag("Update") %>
+<% end %>
+
+      <div class="text-column">
+
+        <p><%= link_to "Perma Delete", admin_client_path(@photo), :method => :delete, :class => 'btn btn-danger' %></p>
+        </div>
+      </div>
+      </div>
+    </div>
