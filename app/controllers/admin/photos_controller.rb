@@ -72,6 +72,7 @@ module Admin
            end
          end
        end
+       @photo.save
        redirect_to :action => :index
 
      end
