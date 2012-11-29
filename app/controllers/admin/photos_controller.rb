@@ -35,6 +35,7 @@ module Admin
          my_container = WAZ::Blobs::Container.find(ENV['AZURE_CONTAINER'])
          if my_container.nil?
            my_container = WAZ::Blobs::Container.create(ENV['AZURE_CONTAINER'])
+
          end
          new_photo_blob = my_container.store(uploaded_io.original_filename, uploaded_io.read, uploaded_io.content_type)
          if !new_photo_blob.nil? && !new_photo_blob.url.blank?
