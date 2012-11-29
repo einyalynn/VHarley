@@ -64,7 +64,11 @@ module Admin
                       :access_key => ENV['AZURE_ACCOUNT_PRIMARY_ACCESS_KEY']}
            WAZ::Storage::Base.establish_connection(options) do
              my_container = WAZ::Blobs::Container.find(ENV['AZURE_CONTAINER'])
+             if my_container.nil?
+               my_container = WAZ::Blobs::Container.create(ENV['AZURE_CONTAINER'])
+             end
              new_photo_blob = my_container.store(imageFileName, uploaded_io.read, uploaded_io.content_type)
+             @photo.url = new_photo_blob.url
            end
          end
        end
